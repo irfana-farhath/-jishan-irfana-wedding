@@ -3,23 +3,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07162d">
-<title>Mohammed Jishan & Irfana Farhath | Wedding Invitation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#061329">
+<title>Jishan & Irfana | A Royal Wedding Invitation</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --midnight: #07162d;
-  --blue: #10294b;
-  --blue2: #18385d;
-  --gold: #b99a60;
-  --gold-light: #d4bd8b;
-  --ivory: #f3ead9;
-  --ink: #17243a;
-  --muted: #d8cbb4;
+  --night: #061329;
+  --navy: #0b2040;
+  --blue: #19385c;
+  --gold: #bd9a58;
+  --light-gold: #e4d1a2;
+  --ivory: #f7efdf;
+  --muted: #c9b991;
 }
 
 * { box-sizing: border-box; }
@@ -28,22 +28,23 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--midnight);
+  background: var(--night);
   color: var(--ivory);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 button, input, textarea { font: inherit; }
 button { cursor: pointer; }
+
 [hidden] { display: none !important; }
 
 .page {
-  max-width: 850px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
   overflow: hidden;
-  background: var(--midnight);
-  box-shadow: 0 0 55px #0008;
+  background: var(--night);
+  box-shadow: 0 0 65px #0009;
 }
 
 .screen {
@@ -55,9 +56,11 @@ button { cursor: pointer; }
 
 .satin {
   background:
-    radial-gradient(ellipse at 12% 10%, #31507855, transparent 25%),
-    radial-gradient(ellipse at 90% 88%, #29456855, transparent 27%),
-    linear-gradient(112deg, #061126 0%, #102746 20%, #07162d 43%, #173353 65%, #07152b 100%);
+    radial-gradient(ellipse at 15% 15%, #31547b55, transparent 35%),
+    radial-gradient(ellipse at 85% 85%, #24476b66, transparent 35%),
+    linear-gradient(115deg,
+      #040d1d 0%, #102746 17%, #07162d 36%,
+      #193656 52%, #08172e 70%, #040d1d 100%);
 }
 
 .satin::before,
@@ -66,396 +69,399 @@ button { cursor: pointer; }
   position: absolute;
   z-index: -1;
   pointer-events: none;
-  width: 36%;
-  height: 130%;
-  top: -12%;
-  opacity: .6;
-  filter: blur(1px);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #8da0b51a 22%,
-    #0005 38%,
-    #a6b6c71a 52%,
-    transparent 75%
-  );
-  transform: rotate(14deg);
-  border-radius: 48%;
-}
-
-.satin::before { left: -18%; }
-.satin::after {
-  right: -19%;
-  transform: rotate(-14deg);
-}
-
-/* Circular decorative arcs, not mosque arches */
-.arc {
-  position: absolute;
-  pointer-events: none;
-  border: 1px solid #b99a6055;
+  width: 45%;
+  height: 140%;
+  top: -20%;
+  opacity: .7;
+  filter: blur(2px);
   border-radius: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  background: linear-gradient(90deg,
+    transparent, #91a6c21a 25%, #0005 42%,
+    #a7b8ce20 55%, transparent 80%);
 }
 
-.arc.outer {
-  width: min(92%, 760px);
-  height: min(150vw, 1060px);
-  top: 4%;
-  max-height: calc(100% - 36px);
+.satin::before {
+  left: -24%;
+  transform: rotate(18deg);
 }
 
-.arc.inner {
-  width: min(84%, 690px);
-  height: min(140vw, 1000px);
-  top: 7%;
-  max-height: calc(100% - 60px);
-  border-color: #d4bd8b35;
+.satin::after {
+  right: -24%;
+  transform: rotate(-18deg);
 }
 
-/* Subtle blue rose and vine decorations */
-.flower-vine {
+/* Victorian frame */
+
+.frame {
   position: absolute;
   pointer-events: none;
-  width: clamp(105px, 22vw, 190px);
-  opacity: .30;
-  filter: saturate(.8);
+  inset: 15px;
+  border: 1px solid #bd9a5880;
+  z-index: 2;
 }
 
-.flower-vine.left {
-  left: -22px;
-  top: 8%;
-  transform: rotate(-8deg);
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid #e4d1a244;
 }
 
-.flower-vine.right {
-  right: -22px;
-  bottom: 7%;
-  transform: scaleX(-1) rotate(-8deg);
+.corner {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  color: var(--light-gold);
+  font-size: 36px;
+  line-height: 1;
 }
 
-.opening {
+.corner.tl { top: -4px; left: 3px; }
+.corner.tr { top: -4px; right: 3px; transform: scaleX(-1); }
+.corner.bl { bottom: -4px; left: 3px; transform: scaleY(-1); }
+.corner.br { bottom: -4px; right: 3px; transform: scale(-1); }
+
+/* Roses and trailing vines */
+
+.rose {
+  position: absolute;
+  width: clamp(115px, 27vw, 225px);
+  opacity: .62;
+  pointer-events: none;
+  filter: drop-shadow(0 5px 14px #0005);
+  z-index: -1;
+}
+
+.rose.top-left {
+  top: 1%;
+  left: -20px;
+  transform: rotate(-10deg);
+}
+
+.rose.bottom-right {
+  bottom: 0;
+  right: -20px;
+  transform: scaleX(-1) rotate(-10deg);
+}
+
+.rose.detail-left {
+  top: 0;
+  left: -26px;
+  width: clamp(120px, 30vw, 230px);
+}
+
+.rose.detail-right {
+  bottom: 0;
+  right: -26px;
+  transform: scaleX(-1);
+  width: clamp(120px, 30vw, 230px);
+}
+
+.cover {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 54px 22px 42px;
+  padding: 65px 25px;
 }
 
-.opening-content {
-  width: min(100%, 590px);
+.cover-content {
+  width: 100%;
+  max-width: 620px;
+  padding: 45px 12px;
   position: relative;
-  padding: 34px 18px 30px;
 }
 
-.bismillah {
+.eyebrow {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.7rem, 5vw, 2.35rem);
-  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-size: .78rem;
+  line-height: 1.8;
+  color: var(--light-gold);
+}
+
+.inshallah {
+  font-family: 'Parisienne', cursive;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: var(--light-gold);
   margin: 0 0 12px;
-  direction: rtl;
 }
 
-.kicker {
-  text-transform: uppercase;
-  letter-spacing: .24em;
-  font-size: .63rem;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-.script {
-  font-family: 'Great Vibes', cursive;
-  font-weight: 400;
-}
-
-.opening-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(2.7rem, 9vw, 4.8rem);
-  line-height: 1.03;
-  margin: 17px 0 8px;
-  color: var(--ivory);
-}
-
-.opening-names {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(2rem, 7.3vw, 3.55rem);
-  line-height: 1.12;
-  margin: 26px 0 8px;
-  color: var(--gold-light);
-}
-
-.opening-names .name-one { display: block; }
-
-.amp {
-  display: block;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
-  color: var(--ivory);
-  margin: 2px 0;
-}
-
-.gold-rule {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.flourish {
   color: var(--gold);
-  margin: 18px auto;
-}
-
-.gold-rule::before,
-.gold-rule::after {
-  content: "";
-  height: 1px;
-  width: 55px;
-  background: linear-gradient(90deg, transparent, var(--gold));
-}
-
-.gold-rule::after {
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.date-line {
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: .09em;
-  font-size: 1.1rem;
-  color: var(--ivory);
-  line-height: 1.9;
-}
-
-.date-line .calendar {
-  font-family: system-ui, sans-serif;
-  font-size: 1rem;
-  margin-right: 7px;
-}
-
-.location-line {
-  font-size: .7rem;
+  font-size: 1.35rem;
   letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  line-height: 2;
-  margin-top: 5px;
+  margin: 17px auto;
 }
 
-.verse {
-  max-width: 430px;
-  margin: 18px auto 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: #e6dccb;
+.cover-heading {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 10vw, 5.2rem);
+  line-height: 1.1;
+  color: var(--ivory);
+  margin: 18px 0;
+  text-shadow: 0 3px 22px #0008;
 }
 
-.verse small {
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 11vw, 5.7rem);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--light-gold);
+  margin: 22px 0 14px;
+  text-shadow: 0 3px 18px #0006;
+}
+
+.ampersand {
   display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: .19em;
-  font-size: .56rem;
-  margin-top: 9px;
-  color: var(--gold-light);
+  font-family: 'Parisienne', cursive;
+  font-size: .65em;
+  color: var(--ivory);
+  line-height: 1.15;
 }
 
-.primary-btn,
-.button {
-  display: inline-flex;
+.cover-date {
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  letter-spacing: .06em;
+  line-height: 1.8;
+  color: var(--ivory);
+}
+
+.cover-location {
+  font-size: 1.1rem;
+  letter-spacing: .15em;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 3px;
+}
+
+.date-ornament {
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-top: 26px;
-  padding: 15px 25px;
-  border: 1px solid var(--gold-light);
-  border-radius: 999px;
-  background: linear-gradient(135deg, #173252, #07162d 70%);
-  color: var(--ivory);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  font-size: .65rem;
-  box-shadow: 0 0 0 4px #b99a6010, 0 9px 25px #0004;
-  transition: transform .2s, background .2s;
+  color: var(--light-gold);
+  margin: 18px auto;
 }
 
-.primary-btn:hover,
-.button:hover {
+.date-ornament::before,
+.date-ornament::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.date-ornament::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.calendar-outline {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20px;
+  height: 21px;
+  border: 1px solid var(--light-gold);
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 9px;
+  position: relative;
+  top: -2px;
+}
+
+.calendar-outline::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: var(--light-gold);
+  border-bottom: 1px solid var(--light-gold);
+}
+
+.invite-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 27px;
+  padding: 16px 30px;
+  border: 1px solid var(--light-gold);
+  outline: 1px solid #bd9a5840;
+  outline-offset: 5px;
+  border-radius: 2px;
+  background: linear-gradient(120deg, #193656, #08162b);
+  color: var(--ivory);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  letter-spacing: .07em;
+  transition: .25s ease;
+}
+
+.invite-btn:hover {
+  background: linear-gradient(120deg, #28496e, #102746);
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #254568, #0b1c35);
+  box-shadow: 0 8px 25px #0005;
 }
 
-.music-control {
-  position: absolute;
-  right: 17px;
-  top: 17px;
-  z-index: 5;
-  border: 1px solid #b99a6070;
-  border-radius: 30px;
-  padding: 10px 13px;
-  background: #07162dcc;
-  color: var(--ivory);
-  font-size: .62rem;
-  letter-spacing: .1em;
-}
-
-.music-note {
-  color: var(--gold-light);
-  margin-right: 5px;
-}
+/* Invitation details */
 
 .section {
-  padding: 66px 25px;
-  text-align: center;
+  padding: 85px 28px;
   position: relative;
+  text-align: center;
+  overflow: hidden;
 }
 
 .cream {
-  background: var(--ivory);
-  color: var(--ink);
+  background: linear-gradient(135deg, #f7efdf, #eee0c4);
+  color: #17253a;
 }
 
 .navy {
-  background: linear-gradient(145deg, #0a1c35, #10294b 55%, #07162d);
+  background:
+    radial-gradient(ellipse at 50% 0%, #203e5d55, transparent 55%),
+    linear-gradient(145deg, #07152a, #102746 55%, #061329);
   color: var(--ivory);
 }
 
 .section h2 {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(2.8rem, 9vw, 4.2rem);
   font-weight: 400;
-  line-height: 1.1;
-  margin: 0 0 17px;
-  color: var(--gold-light);
+  font-size: clamp(3rem, 9vw, 4.7rem);
+  line-height: 1.12;
+  margin: 14px 0 20px;
+  color: var(--light-gold);
 }
 
-.cream h2 { color: var(--blue); }
+.cream h2 { color: #173657; }
 
 .lead {
-  max-width: 500px;
+  max-width: 540px;
   margin: 0 auto;
-  line-height: 1.9;
-  font-size: .88rem;
+  font-size: 1.25rem;
+  line-height: 1.8;
 }
 
+.cream .eyebrow { color: #876a37; }
+
 .date-card {
-  max-width: 410px;
-  margin: 28px auto 0;
-  padding: 26px 18px;
-  border: 1px solid #b99a6080;
-  outline: 1px solid #b99a6028;
-  outline-offset: 5px;
+  max-width: 440px;
+  margin: 38px auto 0;
+  padding: 32px 18px;
+  border: 1px solid #b99a60a6;
+  outline: 1px solid #b99a6040;
+  outline-offset: 6px;
+  position: relative;
 }
 
 .date-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4rem;
-  color: var(--blue);
-  line-height: 1;
+  font-family: 'Great Vibes', cursive;
+  font-size: 5.3rem;
+  line-height: 1.1;
+  color: #173657;
+  margin-top: 8px;
 }
 
 .date-month {
+  font-size: 1.2rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
-  letter-spacing: .2em;
-  font-size: .72rem;
-  margin-top: 8px;
 }
 
 .countdown {
   display: flex;
-  justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 27px;
+  justify-content: center;
+  gap: 12px;
+  margin: 34px auto 0;
 }
 
 .count-unit {
-  min-width: 67px;
-  padding: 12px 8px;
-  border: 1px solid #b99a6070;
-  background: #ffffff06;
+  width: 92px;
+  padding: 15px 8px;
+  border: 1px solid #bd9a5870;
+  background: #ffffff05;
 }
 
 .count-unit strong {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 400;
-  color: var(--gold-light);
+  color: var(--light-gold);
 }
 
 .count-unit span {
   display: block;
-  text-transform: uppercase;
-  font-size: .52rem;
+  font-size: .78rem;
+  font-style: italic;
   letter-spacing: .1em;
-  margin-top: 4px;
 }
 
 .schedule {
-  max-width: 420px;
-  margin: 25px auto 0;
+  max-width: 490px;
+  margin: 32px auto 0;
   text-align: left;
 }
 
 .schedule-row {
   display: grid;
-  grid-template-columns: 95px 1fr;
-  gap: 15px;
-  padding: 16px 0;
-  border-bottom: 1px solid #b99a6030;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  padding: 19px 0;
+  border-bottom: 1px solid #bd9a5840;
 }
 
 .schedule-row time {
-  color: var(--gold-light);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: var(--light-gold);
 }
 
 .schedule-row p {
-  margin: 2px 0 0;
-  font-size: .84rem;
-  line-height: 1.7;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .form-wrap {
   max-width: 480px;
-  margin: 25px auto 0;
+  margin: 30px auto 0;
   text-align: left;
 }
 
-label {
+.form-wrap label {
   display: block;
-  font-size: .75rem;
-  margin: 17px 0 8px;
+  font-size: 1.1rem;
+  margin: 20px 0 9px;
+  font-style: italic;
 }
 
-input[type="text"],
-textarea {
+.form-wrap input[type="text"],
+.form-wrap textarea {
   width: 100%;
-  border: 1px solid #b99a6080;
+  border: 1px solid #bd9a5880;
   background: #ffffff08;
   color: var(--ivory);
-  padding: 13px 12px;
+  padding: 14px;
   border-radius: 0;
+  font-size: 1.1rem;
   outline: none;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #d8cbb499;
+.form-wrap input::placeholder,
+.form-wrap textarea::placeholder {
+  color: #c9b99199;
 }
 
 .choices {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .choices label {
@@ -469,45 +475,82 @@ input[type="radio"] { accent-color: var(--gold); }
 
 .submit {
   width: 100%;
-  margin-top: 23px;
+  margin-top: 24px;
   padding: 15px;
-  background: var(--ivory);
-  color: var(--blue);
-  border: 1px solid var(--gold);
-  text-transform: uppercase;
-  letter-spacing: .13em;
-  font-size: .68rem;
+  background: linear-gradient(120deg, #e4d1a2, #c3a56b);
+  color: #102746;
+  border: 1px solid var(--light-gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: .08em;
 }
 
 .small-note {
-  font-size: .7rem;
+  font-size: 1rem;
+  font-style: italic;
   line-height: 1.7;
-  opacity: .8;
-  margin-top: 15px;
+  color: var(--muted);
+  margin-top: 18px;
 }
 
 .footer {
-  padding: 42px 20px 48px;
+  position: relative;
+  padding: 65px 20px;
   text-align: center;
-  background: #040d1c;
+  background:
+    radial-gradient(ellipse at 50% 0%, #20385855, transparent 60%),
+    #040c19;
+  overflow: hidden;
 }
 
-.footer .script {
-  font-size: 3.2rem;
-  color: var(--ivory);
+.footer-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 10vw, 4.7rem);
+  color: var(--light-gold);
 }
 
 .footer p {
-  font-size: .62rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: .12em;
+  color: var(--muted);
+  font-style: italic;
 }
 
-@media (min-width: 700px) {
-  .section { padding: 82px 50px; }
-  .opening { padding: 60px; }
-  .opening-content { padding: 45px 25px; }
+.back-btn {
+  margin-top: 28px;
+  padding: 13px 25px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--ivory);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.music-control {
+  position: absolute;
+  z-index: 5;
+  top: 30px;
+  right: 30px;
+  border: 1px solid #bd9a5880;
+  background: #07162ddd;
+  color: var(--light-gold);
+  padding: 10px 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .frame { inset: 10px; }
+  .cover { padding: 60px 18px; }
+  .cover-content { padding: 38px 8px; }
+  .section { padding: 72px 22px; }
+  .music-control { top: 22px; right: 22px; }
+  .count-unit { width: 75px; }
+  .schedule-row { grid-template-columns: 90px 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -520,212 +563,311 @@ input[type="radio"] { accent-color: var(--gold); }
 <body>
 <main class="page">
 
-  <!-- OPENING COVER -->
-  <section class="screen satin opening" id="cover">
-    <div class="arc outer"></div>
-    <div class="arc inner"></div>
+<!-- ROYAL COVER: FIRST PAGE -->
 
-    <!-- Subtle blue rose and vine decoration -->
-    <svg class="flower-vine left" viewBox="0 0 180 390" aria-hidden="true">
-      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
-        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
-        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
-                 M63 268 Q103 250 103 220 Q69 229 63 268
-                 M77 183 Q39 165 43 137 Q76 151 77 183
-                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
-        <path d="M36 342 Q70 343 80 315 M54 290 Q31 260 43 239
-                 M87 151 Q112 159 120 137"/>
-      </g>
-      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
-        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
-                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
-        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
-                 C133 44 118 56 109 48Z"/>
-        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
-      </g>
-      <g fill="#9cabc0" opacity=".7">
-        <circle cx="75" cy="93" r="2"/>
-        <circle cx="88" cy="87" r="2"/>
-        <circle cx="82" cy="102" r="2"/>
-        <circle cx="38" cy="211" r="2"/>
-        <circle cx="45" cy="220" r="2"/>
-      </g>
-    </svg>
+<section class="screen satin cover" id="cover">
 
-    <svg class="flower-vine right" viewBox="0 0 180 390" aria-hidden="true">
-      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
-        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
-        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
-                 M63 268 Q103 250 103 220 Q69 229 63 268
-                 M77 183 Q39 165 43 137 Q76 151 77 183
-                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
-      </g>
-      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
-        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
-                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
-        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
-                 C133 44 118 56 109 48Z"/>
-        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
-      </g>
-    </svg>
+  <div class="frame" aria-hidden="true">
+    <span class="corner tl">❧</span>
+    <span class="corner tr">❧</span>
+    <span class="corner bl">❧</span>
+    <span class="corner br">❧</span>
+  </div>
 
-    <button class="music-control" id="music-toggle" type="button">
-      <span class="music-note">♫</span>
-      <span id="music-label">PLAY MUSIC</span>
+  <!-- Decorative blue roses -->
+
+  <svg class="rose top-left" viewBox="0 0 220 320"
+       fill="none" aria-hidden="true">
+    <g stroke="#8da6c2" stroke-width="1.4">
+      <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
+      <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
+            fill="#10294b"/>
+      <path d="M67 213 Q111 193 105 162 Q75 174 67 213Z"
+            fill="#19385c"/>
+      <path d="M97 151 Q60 136 69 108 Q96 120 97 151Z"
+            fill="#10294b"/>
+      <path d="M133 89 Q168 79 171 49 Q142 59 133 89Z"
+            fill="#19385c"/>
+      <path d="M145 55 C120 34 132 10 151 15
+               C171 -5 193 17 185 35
+               C203 54 181 76 161 64
+               C149 76 137 65 145 55Z"
+            fill="#19385c"/>
+      <path d="M151 49 C140 36 151 24 161 30
+               C175 17 185 36 174 43
+               C173 57 158 57 151 49Z"
+            fill="#0b2040"/>
+      <path d="M158 43 Q165 31 174 39 Q169 50 162 47Z"
+            fill="#061329"/>
+      <path d="M25 286 Q58 287 68 260"/>
+    </g>
+  </svg>
+
+  <svg class="rose bottom-right" viewBox="0 0 220 320"
+       fill="none" aria-hidden="true">
+    <g stroke="#8da6c2" stroke-width="1.4">
+      <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
+      <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
+            fill="#10294b"/>
+      <path d="M67 213 Q111 193 105 162 Q75 174 67 213Z"
+            fill="#19385c"/>
+      <path d="M97 151 Q60 136 69 108 Q96 120 97 151Z"
+            fill="#10294b"/>
+      <path d="M145 55 C120 34 132 10 151 15
+               C171 -5 193 17 185 35
+               C203 54 181 76 161 64
+               C149 76 137 65 145 55Z"
+            fill="#19385c"/>
+      <path d="M151 49 C140 36 151 24 161 30
+               C175 17 185 36 174 43
+               C173 57 158 57 151 49Z"
+            fill="#0b2040"/>
+    </g>
+  </svg>
+
+  <div class="cover-content">
+
+    <p class="inshallah">In shā’ Allāh</p>
+
+    <div class="flourish">❧ ❦ ❧</div>
+
+    <div class="eyebrow">Together with our families</div>
+
+    <h1 class="cover-heading">A Royal Wedding</h1>
+
+    <div class="names">
+      Mohammed Jishan
+      <span class="ampersand">&</span>
+      Irfana Farhath
+    </div>
+
+    <div class="flourish">✧ ── ❦ ── ✧</div>
+
+    <div class="cover-date">
+      <span class="calendar-outline" aria-hidden="true"></span>
+      Sunday, 22 November 2026
+      <br>
+      11 o'clock in the morning
+    </div>
+
+    <div class="cover-location">
+      Makkaraparamba · Kerala
+    </div>
+
+    <button class="invite-btn" id="open-invitation" type="button">
+      Here's Your Invitation <span aria-hidden="true">❧</span>
     </button>
 
-    <div class="opening-content">
-      <p class="bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <div class="flourish">❦</div>
 
-      <div class="kicker">With the blessings of Allah and our families</div>
-      <div class="gold-rule">✧ ❦ ✧</div>
+  </div>
+</section>
 
-      <p class="kicker">You are warmly invited to celebrate</p>
-      <h1 class="opening-title">A Wedding Celebration</h1>
 
-      <div class="opening-names">
-        <span class="name-one">Mohammed Jishan</span>
-        <span class="amp">&</span>
-        <span>Irfana Farhath</span>
-      </div>
+<!-- SECOND PAGE: FULL INVITATION -->
 
-      <div class="gold-rule">❦</div>
+<div id="invitation" hidden>
 
-      <div class="date-line">
-        <span class="calendar">🗓️</span>
-        Sunday, 22 November 2026<br>
-        11:00 AM
-      </div>
+  <section class="section cream" id="welcome">
 
-      <div class="location-line">Makkaraparamba · Kerala</div>
+    <svg class="rose detail-left" viewBox="0 0 220 320"
+         fill="none" aria-hidden="true">
+      <g stroke="#19385c" stroke-width="1.4">
+        <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
+        <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
+              fill="#19385c"/>
+        <path d="M67 213 Q111 193 105 162 Q75 174 67 213Z"
+              fill="#10294b"/>
+        <path d="M145 55 C120 34 132 10 151 15
+                 C171 -5 193 17 185 35
+                 C203 54 181 76 161 64
+                 C149 76 137 65 145 55Z"
+              fill="#19385c"/>
+        <path d="M151 49 C140 36 151 24 161 30
+                 C175 17 185 36 174 43
+                 C173 57 158 57 151 49Z"
+              fill="#10294b"/>
+      </g>
+    </svg>
 
-      <p class="verse">
-        “And He placed between you affection and mercy.”
-        <small>Qur’an 30:21 · excerpt</small>
+    <div class="eyebrow">In the presence of Allah's blessings</div>
+    <h2>To our beloved family & friends</h2>
+    <div class="flourish">❦ ✧ ❦</div>
+
+    <p class="lead">
+      With grateful hearts and prayers for Allah's blessings,
+      we joyfully invite you to share in the beginning of our
+      new life together. Your presence, prayers and good wishes
+      would make this cherished occasion all the more beautiful.
+    </p>
+
+    <div class="date-card">
+      <div class="eyebrow">Kindly reserve the date</div>
+      <div class="date-number">22</div>
+      <div class="date-month">November · 2026</div>
+      <div class="flourish">✧ ❦ ✧</div>
+      <p style="font-size:1.3rem;font-style:italic">
+        Sunday · 11:00 AM
       </p>
-
-      <button class="primary-btn" id="open-invitation" type="button">
-        Here's Your Invitation <span aria-hidden="true">→</span>
-      </button>
-
-      <div class="gold-rule">✧</div>
-      <p class="kicker" style="margin:0">In shā’ Allāh · إن شاء الله</p>
+      <p style="font-size:1.3rem;font-style:italic">
+        Makkaraparamba, Kerala
+      </p>
     </div>
+
   </section>
 
-  <!-- DETAILS ARE HIDDEN UNTIL THE COVER BUTTON IS TAPPED -->
-  <div id="invitation" hidden>
 
-    <section class="section cream" id="welcome">
-      <div class="kicker">Bismillah · In the name of Allah</div>
-      <h2>Dear family &amp; friends</h2>
-      <div class="gold-rule">❦</div>
+  <section class="section navy" id="countdown-section">
 
-      <p class="lead">
-        With grateful hearts and the blessings of Allah, we invite you
-        to join us as we begin this beautiful new chapter together.
-        Your presence, prayers and blessings will make our day even
-        more meaningful.
-      </p>
+    <div class="eyebrow">The day our new chapter begins</div>
+    <h2>Counting the moments</h2>
 
-      <div class="date-card">
-        <div class="kicker">Please save the date</div>
-        <div class="date-number">22</div>
-        <div class="date-month">November · 2026</div>
-        <div class="gold-rule">✧ ❦ ✧</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem">
-          Makkaraparamba, Kerala
-        </div>
-        <p style="margin:10px 0 0;font-size:.8rem">🗓️ Sunday · 11:00 AM</p>
+    <p class="lead">
+      With hearts full of hope, we await this blessed day,
+      In shā’ Allāh.
+    </p>
+
+    <div class="countdown" aria-label="Countdown to the wedding">
+      <div class="count-unit">
+        <strong id="days">--</strong><span>Days</span>
       </div>
-    </section>
-
-    <section class="section navy" id="countdown-section">
-      <div class="kicker">Until our special day</div>
-      <h2>Counting the moments</h2>
-      <p class="lead">We look forward to celebrating with you, In shā’ Allāh.</p>
-
-      <div class="countdown" aria-label="Countdown to wedding">
-        <div class="count-unit"><strong id="days">--</strong><span>Days</span></div>
-        <div class="count-unit"><strong id="hours">--</strong><span>Hours</span></div>
-        <div class="count-unit"><strong id="minutes">--</strong><span>Minutes</span></div>
-        <div class="count-unit"><strong id="seconds">--</strong><span>Seconds</span></div>
+      <div class="count-unit">
+        <strong id="hours">--</strong><span>Hours</span>
       </div>
-    </section>
+      <div class="count-unit">
+        <strong id="minutes">--</strong><span>Minutes</span>
+      </div>
+      <div class="count-unit">
+        <strong id="seconds">--</strong><span>Seconds</span>
+      </div>
+    </div>
 
-    <section class="section navy" id="schedule">
-      <div class="kicker">The celebration</div>
-      <h2>Wedding day</h2>
-      <p class="lead">A day of love, prayers and new beginnings.</p>
+    <div class="flourish">❦</div>
+  </section>
 
-      <div class="schedule">
-        <div class="schedule-row">
-          <time>11:00 AM</time>
-          <p>
-            <strong>Wedding celebration</strong><br>
-            <span style="opacity:.75">Sunday, 22 November 2026</span>
-          </p>
-        </div>
-        <div class="schedule-row">
-          <time>Venue</time>
-          <p>Makkaraparamba, Kachinikkad, Kerala</p>
-        </div>
+
+  <section class="section navy" id="schedule">
+
+    <div class="eyebrow">The occasion</div>
+    <h2>The Wedding Day</h2>
+
+    <p class="lead">
+      A gathering of loved ones, heartfelt prayers,
+      and the beginning of a beautiful journey.
+    </p>
+
+    <div class="schedule">
+
+      <div class="schedule-row">
+        <time>11 AM</time>
+        <p>
+          <strong>Wedding Celebration</strong><br>
+          Sunday, 22 November 2026
+        </p>
       </div>
 
-      <p class="verse">
-        “Our Lord, grant us from among our spouses and offspring comfort to our eyes.”
-        <small>Qur’an 25:74 · excerpt</small>
-      </p>
-    </section>
-
-    <section class="section navy" id="rsvp">
-      <div class="kicker">Kindly reply</div>
-      <h2>Will you join us?</h2>
-      <p class="lead">Please let us know if you can celebrate with us.</p>
-
-      <form class="form-wrap" id="rsvp-form">
-        <label for="guest-name">Your name</label>
-        <input id="guest-name" name="name" type="text"
-               placeholder="Enter your full name" required>
-
-        <label>Will you be attending?</label>
-        <div class="choices">
-          <label>
-            <input type="radio" name="attendance"
-                   value="Joyfully accepts" required>
-            Joyfully accepts
-          </label>
-          <label>
-            <input type="radio" name="attendance"
-                   value="Regretfully declines">
-            Regretfully declines
-          </label>
-        </div>
-
-        <label for="message">A message for the couple (optional)</label>
-        <textarea id="message" name="message" rows="3"
-                  placeholder="Write your wishes..."></textarea>
-
-        <button class="submit" type="submit">Prepare RSVP</button>
-        <p class="small-note">RSVP contact: +91 7994579109</p>
-      </form>
-    </section>
-
-    <footer class="footer">
-      <div class="script">Jishan &amp; Irfana</div>
-      <p>22 November 2026 · Makkaraparamba</p>
-      <div class="gold-rule">✦ ❦ ✦</div>
-      <div class="kicker">
-        May Allah bless our union with love, peace and mercy
+      <div class="schedule-row">
+        <time>Venue</time>
+        <p>Makkaraparamba, Kachinikkad, Kerala</p>
       </div>
-      <button class="button" id="back-to-cover" type="button">
-        Back to cover ↑
+
+    </div>
+
+    <div class="flourish">✧ ❦ ✧</div>
+
+    <p class="lead" style="font-style:italic">
+      May Allah fill our lives with affection, mercy,
+      peace and enduring blessings.
+    </p>
+
+  </section>
+
+
+  <section class="section navy" id="rsvp">
+
+    <div class="eyebrow">We would be honoured by your presence</div>
+    <h2>Kindly reply</h2>
+
+    <p class="lead">
+      Please let us know if you will be joining us
+      on this special occasion.
+    </p>
+
+    <form class="form-wrap" id="rsvp-form">
+
+      <label for="guest-name">Your name</label>
+      <input id="guest-name" name="name" type="text"
+             placeholder="Kindly enter your name" required>
+
+      <label>Will you be attending?</label>
+
+      <div class="choices">
+        <label>
+          <input type="radio" name="attendance"
+                 value="Joyfully accepts" required>
+          Joyfully accepts
+        </label>
+
+        <label>
+          <input type="radio" name="attendance"
+                 value="Regretfully declines">
+          Regretfully declines
+        </label>
+      </div>
+
+      <label for="message">Your wishes for the couple (optional)</label>
+      <textarea id="message" name="message" rows="3"
+                placeholder="Leave your kind wishes..."></textarea>
+
+      <button class="submit" type="submit">
+        Send your response
       </button>
-    </footer>
-  </div>
+
+      <p class="small-note">
+        For enquiries: +91 7994579109
+      </p>
+
+    </form>
+
+  </section>
+
+
+  <footer class="footer">
+
+    <svg class="rose detail-left" viewBox="0 0 220 320"
+         fill="none" aria-hidden="true">
+      <g stroke="#8da6c2" stroke-width="1.4">
+        <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
+        <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
+              fill="#19385c"/>
+        <path d="M145 55 C120 34 132 10 151 15
+                 C171 -5 193 17 185 35
+                 C203 54 181 76 161 64
+                 C149 76 137 65 145 55Z"
+              fill="#19385c"/>
+      </g>
+    </svg>
+
+    <div class="footer-names">Jishan & Irfana</div>
+
+    <p>22 November 2026 · Makkaraparamba</p>
+
+    <div class="flourish">✧ ── ❦ ── ✧</div>
+
+    <p style="font-style:italic;letter-spacing:normal">
+      In shā’ Allāh, may our union be blessed with
+      love, peace and mercy.
+    </p>
+
+    <button class="back-btn" id="back-to-cover" type="button">
+      Return to the invitation cover ↑
+    </button>
+
+  </footer>
+
+</div>
 </main>
 
-<!-- Upload a licensed audio file named music.mp3 to the repository root -->
 <audio id="background-music" loop preload="none">
   <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -735,36 +877,35 @@ const cover = document.getElementById('cover');
 const invitation = document.getElementById('invitation');
 const openButton = document.getElementById('open-invitation');
 const backButton = document.getElementById('back-to-cover');
+
 const audio = document.getElementById('background-music');
 const musicToggle = document.getElementById('music-toggle');
 const musicLabel = document.getElementById('music-label');
 
-openButton.addEventListener('click', () => {
-  invitation.hidden = false;
+openButton.addEventListener('click', function () {
   cover.hidden = true;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  invitation.hidden = false;
+  window.scrollTo({ top: 0, behavior: 'auto' });
   updateCountdown();
 });
 
-backButton.addEventListener('click', () => {
+backButton.addEventListener('click', function () {
   invitation.hidden = true;
   cover.hidden = false;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'auto' });
 });
 
-musicToggle.addEventListener('click', async () => {
+musicToggle.addEventListener('click', async function () {
   if (audio.paused) {
     try {
       await audio.play();
-      musicLabel.textContent = 'PAUSE MUSIC';
-      musicToggle.setAttribute('aria-label', 'Pause background music');
+      musicLabel.textContent = '♫ Pause Music';
     } catch (error) {
-      alert('Music could not play. Upload a music file named music.mp3 to the same project folder, then try again.');
+      alert('Please upload a music file named music.mp3 to your project folder first.');
     }
   } else {
     audio.pause();
-    musicLabel.textContent = 'PLAY MUSIC';
-    musicToggle.setAttribute('aria-label', 'Play background music');
+    musicLabel.textContent = '♫ Music';
   }
 });
 
@@ -782,9 +923,9 @@ function updateCountdown() {
         Math.floor((remaining % 60000) / 1000)
       ];
 
-  ['days', 'hours', 'minutes', 'seconds'].forEach((id, i) => {
+  ['days', 'hours', 'minutes', 'seconds'].forEach((id, index) => {
     document.getElementById(id).textContent =
-      String(values[i]).padStart(2, '0');
+      String(values[index]).padStart(2, '0');
   });
 }
 
@@ -795,827 +936,28 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
   event.preventDefault();
 
   const name = document.getElementById('guest-name').value.trim();
+
   const attendance =
     document.querySelector('input[name="attendance"]:checked')?.value || '';
+
   const message = document.getElementById('message').value.trim();
 
-  // WhatsApp number: country code + number, without + or spaces.
   const whatsappNumber = '917994579109';
 
   const text = encodeURIComponent(
     `Wedding RSVP - Mohammed Jishan & Irfana Farhath\n` +
-    `Name: ${name}\nAttendance: ${attendance}\nMessage: ${message}`
+    `Name: ${name}\n` +
+    `Attendance: ${attendance}\n` +
+    `Message: ${message}`
   );
 
   window.open(
-    `https://wa.me/${whatsappNumber
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07162d">
-<title>Mohammed Jishan & Irfana Farhath | Wedding Invitation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --midnight: #07162d;
-  --blue: #10294b;
-  --blue2: #18385d;
-  --gold: #b99a60;
-  --gold-light: #d4bd8b;
-  --ivory: #f3ead9;
-  --ink: #17243a;
-  --muted: #d8cbb4;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--midnight);
-  color: var(--ivory);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-}
-
-button, input, textarea { font: inherit; }
-button { cursor: pointer; }
-[hidden] { display: none !important; }
-
-.page {
-  max-width: 850px;
-  margin: 0 auto;
-  overflow: hidden;
-  background: var(--midnight);
-  box-shadow: 0 0 55px #0008;
-}
-
-.screen {
-  min-height: 100svh;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.satin {
-  background:
-    radial-gradient(ellipse at 12% 10%, #31507855, transparent 25%),
-    radial-gradient(ellipse at 90% 88%, #29456855, transparent 27%),
-    linear-gradient(112deg, #061126 0%, #102746 20%, #07162d 43%, #173353 65%, #07152b 100%);
-}
-
-.satin::before,
-.satin::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  width: 36%;
-  height: 130%;
-  top: -12%;
-  opacity: .6;
-  filter: blur(1px);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #8da0b51a 22%,
-    #0005 38%,
-    #a6b6c71a 52%,
-    transparent 75%
+    `https://wa.me/${whatsappNumber}?text=${text}`,
+    '_blank',
+    'noopener,noreferrer'
   );
-  transform: rotate(14deg);
-  border-radius: 48%;
-}
-
-.satin::before { left: -18%; }
-.satin::after {
-  right: -19%;
-  transform: rotate(-14deg);
-}
-
-/* Circular decorative arcs, not mosque arches */
-.arc {
-  position: absolute;
-  pointer-events: none;
-  border: 1px solid #b99a6055;
-  border-radius: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.arc.outer {
-  width: min(92%, 760px);
-  height: min(150vw, 1060px);
-  top: 4%;
-  max-height: calc(100% - 36px);
-}
-
-.arc.inner {
-  width: min(84%, 690px);
-  height: min(140vw, 1000px);
-  top: 7%;
-  max-height: calc(100% - 60px);
-  border-color: #d4bd8b35;
-}
-
-/* Subtle blue rose and vine decorations */
-.flower-vine {
-  position: absolute;
-  pointer-events: none;
-  width: clamp(105px, 22vw, 190px);
-  opacity: .30;
-  filter: saturate(.8);
-}
-
-.flower-vine.left {
-  left: -22px;
-  top: 8%;
-  transform: rotate(-8deg);
-}
-
-.flower-vine.right {
-  right: -22px;
-  bottom: 7%;
-  transform: scaleX(-1) rotate(-8deg);
-}
-
-.opening {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 54px 22px 42px;
-}
-
-.opening-content {
-  width: min(100%, 590px);
-  position: relative;
-  padding: 34px 18px 30px;
-}
-
-.bismillah {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.7rem, 5vw, 2.35rem);
-  color: var(--gold-light);
-  margin: 0 0 12px;
-  direction: rtl;
-}
-
-.kicker {
-  text-transform: uppercase;
-  letter-spacing: .24em;
-  font-size: .63rem;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-.script {
-  font-family: 'Great Vibes', cursive;
-  font-weight: 400;
-}
-
-.opening-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(2.7rem, 9vw, 4.8rem);
-  line-height: 1.03;
-  margin: 17px 0 8px;
-  color: var(--ivory);
-}
-
-.opening-names {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(2rem, 7.3vw, 3.55rem);
-  line-height: 1.12;
-  margin: 26px 0 8px;
-  color: var(--gold-light);
-}
-
-.opening-names .name-one { display: block; }
-
-.amp {
-  display: block;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
-  color: var(--ivory);
-  margin: 2px 0;
-}
-
-.gold-rule {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: var(--gold);
-  margin: 18px auto;
-}
-
-.gold-rule::before,
-.gold-rule::after {
-  content: "";
-  height: 1px;
-  width: 55px;
-  background: linear-gradient(90deg, transparent, var(--gold));
-}
-
-.gold-rule::after {
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.date-line {
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: .09em;
-  font-size: 1.1rem;
-  color: var(--ivory);
-  line-height: 1.9;
-}
-
-.date-line .calendar {
-  font-family: system-ui, sans-serif;
-  font-size: 1rem;
-  margin-right: 7px;
-}
-
-.location-line {
-  font-size: .7rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  line-height: 2;
-  margin-top: 5px;
-}
-
-.verse {
-  max-width: 430px;
-  margin: 18px auto 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: #e6dccb;
-}
-
-.verse small {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: .19em;
-  font-size: .56rem;
-  margin-top: 9px;
-  color: var(--gold-light);
-}
-
-.primary-btn,
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 26px;
-  padding: 15px 25px;
-  border: 1px solid var(--gold-light);
-  border-radius: 999px;
-  background: linear-gradient(135deg, #173252, #07162d 70%);
-  color: var(--ivory);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  font-size: .65rem;
-  box-shadow: 0 0 0 4px #b99a6010, 0 9px 25px #0004;
-  transition: transform .2s, background .2s;
-}
-
-.primary-btn:hover,
-.button:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #254568, #0b1c35);
-}
-
-.music-control {
-  position: absolute;
-  right: 17px;
-  top: 17px;
-  z-index: 5;
-  border: 1px solid #b99a6070;
-  border-radius: 30px;
-  padding: 10px 13px;
-  background: #07162dcc;
-  color: var(--ivory);
-  font-size: .62rem;
-  letter-spacing: .1em;
-}
-
-.music-note {
-  color: var(--gold-light);
-  margin-right: 5px;
-}
-
-.section {
-  padding: 66px 25px;
-  text-align: center;
-  position: relative;
-}
-
-.cream {
-  background: var(--ivory);
-  color: var(--ink);
-}
-
-.navy {
-  background: linear-gradient(145deg, #0a1c35, #10294b 55%, #07162d);
-  color: var(--ivory);
-}
-
-.section h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2.8rem, 9vw, 4.2rem);
-  font-weight: 400;
-  line-height: 1.1;
-  margin: 0 0 17px;
-  color: var(--gold-light);
-}
-
-.cream h2 { color: var(--blue); }
-
-.lead {
-  max-width: 500px;
-  margin: 0 auto;
-  line-height: 1.9;
-  font-size: .88rem;
-}
-
-.date-card {
-  max-width: 410px;
-  margin: 28px auto 0;
-  padding: 26px 18px;
-  border: 1px solid #b99a6080;
-  outline: 1px solid #b99a6028;
-  outline-offset: 5px;
-}
-
-.date-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4rem;
-  color: var(--blue);
-  line-height: 1;
-}
-
-.date-month {
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  font-size: .72rem;
-  margin-top: 8px;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 27px;
-}
-
-.count-unit {
-  min-width: 67px;
-  padding: 12px 8px;
-  border: 1px solid #b99a6070;
-  background: #ffffff06;
-}
-
-.count-unit strong {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--gold-light);
-}
-
-.count-unit span {
-  display: block;
-  text-transform: uppercase;
-  font-size: .52rem;
-  letter-spacing: .1em;
-  margin-top: 4px;
-}
-
-.schedule {
-  max-width: 420px;
-  margin: 25px auto 0;
-  text-align: left;
-}
-
-.schedule-row {
-  display: grid;
-  grid-template-columns: 95px 1fr;
-  gap: 15px;
-  padding: 16px 0;
-  border-bottom: 1px solid #b99a6030;
-}
-
-.schedule-row time {
-  color: var(--gold-light);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
-}
-
-.schedule-row p {
-  margin: 2px 0 0;
-  font-size: .84rem;
-  line-height: 1.7;
-}
-
-.form-wrap {
-  max-width: 480px;
-  margin: 25px auto 0;
-  text-align: left;
-}
-
-label {
-  display: block;
-  font-size: .75rem;
-  margin: 17px 0 8px;
-}
-
-input[type="text"],
-textarea {
-  width: 100%;
-  border: 1px solid #b99a6080;
-  background: #ffffff08;
-  color: var(--ivory);
-  padding: 13px 12px;
-  border-radius: 0;
-  outline: none;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #d8cbb499;
-}
-
-.choices {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.choices label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0;
-}
-
-input[type="radio"] { accent-color: var(--gold); }
-
-.submit {
-  width: 100%;
-  margin-top: 23px;
-  padding: 15px;
-  background: var(--ivory);
-  color: var(--blue);
-  border: 1px solid var(--gold);
-  text-transform: uppercase;
-  letter-spacing: .13em;
-  font-size: .68rem;
-}
-
-.small-note {
-  font-size: .7rem;
-  line-height: 1.7;
-  opacity: .8;
-  margin-top: 15px;
-}
-
-.footer {
-  padding: 42px 20px 48px;
-  text-align: center;
-  background: #040d1c;
-}
-
-.footer .script {
-  font-size: 3.2rem;
-  color: var(--ivory);
-}
-
-.footer p {
-  font-size: .62rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-}
-
-@media (min-width: 700px) {
-  .section { padding: 82px 50px; }
-  .opening { padding: 60px; }
-  .opening-content { padding: 45px 25px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
-}
-</style>
-</head>
-
-<body>
-<main class="page">
-
-  <!-- OPENING COVER -->
-  <section class="screen satin opening" id="cover">
-    <div class="arc outer"></div>
-    <div class="arc inner"></div>
-
-    <!-- Subtle blue rose and vine decoration -->
-    <svg class="flower-vine left" viewBox="0 0 180 390" aria-hidden="true">
-      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
-        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
-        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
-                 M63 268 Q103 250 103 220 Q69 229 63 268
-                 M77 183 Q39 165 43 137 Q76 151 77 183
-                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
-        <path d="M36 342 Q70 343 80 315 M54 290 Q31 260 43 239
-                 M87 151 Q112 159 120 137"/>
-      </g>
-      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
-        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
-                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
-        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
-                 C133 44 118 56 109 48Z"/>
-        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
-      </g>
-      <g fill="#9cabc0" opacity=".7">
-        <circle cx="75" cy="93" r="2"/>
-        <circle cx="88" cy="87" r="2"/>
-        <circle cx="82" cy="102" r="2"/>
-        <circle cx="38" cy="211" r="2"/>
-        <circle cx="45" cy="220" r="2"/>
-      </g>
-    </svg>
-
-    <svg class="flower-vine right" viewBox="0 0 180 390" aria-hidden="true">
-      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
-        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
-        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
-                 M63 268 Q103 250 103 220 Q69 229 63 268
-                 M77 183 Q39 165 43 137 Q76 151 77 183
-                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
-      </g>
-      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
-        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
-                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
-        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
-                 C133 44 118 56 109 48Z"/>
-        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
-      </g>
-    </svg>
-
-    <button class="music-control" id="music-toggle" type="button">
-      <span class="music-note">♫</span>
-      <span id="music-label">PLAY MUSIC</span>
-    </button>
-
-    <div class="opening-content">
-      <p class="bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-
-      <div class="kicker">With the blessings of Allah and our families</div>
-      <div class="gold-rule">✧ ❦ ✧</div>
-
-      <p class="kicker">You are warmly invited to celebrate</p>
-      <h1 class="opening-title">A Wedding Celebration</h1>
-
-      <div class="opening-names">
-        <span class="name-one">Mohammed Jishan</span>
-        <span class="amp">&</span>
-        <span>Irfana Farhath</span>
-      </div>
-
-      <div class="gold-rule">❦</div>
-
-      <div class="date-line">
-        <span class="calendar">🗓️</span>
-        Sunday, 22 November 2026<br>
-        11:00 AM
-      </div>
-
-      <div class="location-line">Makkaraparamba · Kerala</div>
-
-      <p class="verse">
-        “And He placed between you affection and mercy.”
-        <small>Qur’an 30:21 · excerpt</small>
-      </p>
-
-      <button class="primary-btn" id="open-invitation" type="button">
-        Here's Your Invitation <span aria-hidden="true">→</span>
-      </button>
-
-      <div class="gold-rule">✧</div>
-      <p class="kicker" style="margin:0">In shā’ Allāh · إن شاء الله</p>
-    </div>
-  </section>
-
-  <!-- DETAILS ARE HIDDEN UNTIL THE COVER BUTTON IS TAPPED -->
-  <div id="invitation" hidden>
-
-    <section class="section cream" id="welcome">
-      <div class="kicker">Bismillah · In the name of Allah</div>
-      <h2>Dear family &amp; friends</h2>
-      <div class="gold-rule">❦</div>
-
-      <p class="lead">
-        With grateful hearts and the blessings of Allah, we invite you
-        to join us as we begin this beautiful new chapter together.
-        Your presence, prayers and blessings will make our day even
-        more meaningful.
-      </p>
-
-      <div class="date-card">
-        <div class="kicker">Please save the date</div>
-        <div class="date-number">22</div>
-        <div class="date-month">November · 2026</div>
-        <div class="gold-rule">✧ ❦ ✧</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem">
-          Makkaraparamba, Kerala
-        </div>
-        <p style="margin:10px 0 0;font-size:.8rem">🗓️ Sunday · 11:00 AM</p>
-      </div>
-    </section>
-
-    <section class="section navy" id="countdown-section">
-      <div class="kicker">Until our special day</div>
-      <h2>Counting the moments</h2>
-      <p class="lead">We look forward to celebrating with you, In shā’ Allāh.</p>
-
-      <div class="countdown" aria-label="Countdown to wedding">
-        <div class="count-unit"><strong id="days">--</strong><span>Days</span></div>
-        <div class="count-unit"><strong id="hours">--</strong><span>Hours</span></div>
-        <div class="count-unit"><strong id="minutes">--</strong><span>Minutes</span></div>
-        <div class="count-unit"><strong id="seconds">--</strong><span>Seconds</span></div>
-      </div>
-    </section>
-
-    <section class="section navy" id="schedule">
-      <div class="kicker">The celebration</div>
-      <h2>Wedding day</h2>
-      <p class="lead">A day of love, prayers and new beginnings.</p>
-
-      <div class="schedule">
-        <div class="schedule-row">
-          <time>11:00 AM</time>
-          <p>
-            <strong>Wedding celebration</strong><br>
-            <span style="opacity:.75">Sunday, 22 November 2026</span>
-          </p>
-        </div>
-        <div class="schedule-row">
-          <time>Venue</time>
-          <p>Makkaraparamba, Kachinikkad, Kerala</p>
-        </div>
-      </div>
-
-      <p class="verse">
-        “Our Lord, grant us from among our spouses and offspring comfort to our eyes.”
-        <small>Qur’an 25:74 · excerpt</small>
-      </p>
-    </section>
-
-    <section class="section navy" id="rsvp">
-      <div class="kicker">Kindly reply</div>
-      <h2>Will you join us?</h2>
-      <p class="lead">Please let us know if you can celebrate with us.</p>
-
-      <form class="form-wrap" id="rsvp-form">
-        <label for="guest-name">Your name</label>
-        <input id="guest-name" name="name" type="text"
-               placeholder="Enter your full name" required>
-
-        <label>Will you be attending?</label>
-        <div class="choices">
-          <label>
-            <input type="radio" name="attendance"
-                   value="Joyfully accepts" required>
-            Joyfully accepts
-          </label>
-          <label>
-            <input type="radio" name="attendance"
-                   value="Regretfully declines">
-            Regretfully declines
-          </label>
-        </div>
-
-        <label for="message">A message for the couple (optional)</label>
-        <textarea id="message" name="message" rows="3"
-                  placeholder="Write your wishes..."></textarea>
-
-        <button class="submit" type="submit">Prepare RSVP</button>
-        <p class="small-note">RSVP contact: +91 7994579109</p>
-      </form>
-    </section>
-
-    <footer class="footer">
-      <div class="script">Jishan &amp; Irfana</div>
-      <p>22 November 2026 · Makkaraparamba</p>
-      <div class="gold-rule">✦ ❦ ✦</div>
-      <div class="kicker">
-        May Allah bless our union with love, peace and mercy
-      </div>
-      <button class="button" id="back-to-cover" type="button">
-        Back to cover ↑
-      </button>
-    </footer>
-  </div>
-</main>
-
-<!-- Upload a licensed audio file named music.mp3 to the repository root -->
-<audio id="background-music" loop preload="none">
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const cover = document.getElementById('cover');
-const invitation = document.getElementById('invitation');
-const openButton = document.getElementById('open-invitation');
-const backButton = document.getElementById('back-to-cover');
-const audio = document.getElementById('background-music');
-const musicToggle = document.getElementById('music-toggle');
-const musicLabel = document.getElementById('music-label');
-
-openButton.addEventListener('click', () => {
-  invitation.hidden = false;
-  cover.hidden = true;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  updateCountdown();
 });
+</script>
 
-backButton.addEventListener('click', () => {
-  invitation.hidden = true;
-  cover.hidden = false;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-musicToggle.addEventListener('click', async () => {
-  if (audio.paused) {
-    try {
-      await audio.play();
-      musicLabel.textContent = 'PAUSE MUSIC';
-      musicToggle.setAttribute('aria-label', 'Pause background music');
-    } catch (error) {
-      alert('Music could not play. Upload a music file named music.mp3 to the same project folder, then try again.');
-    }
-  } else {
-    audio.pause();
-    musicLabel.textContent = 'PLAY MUSIC';
-    musicToggle.setAttribute('aria-label', 'Play background music');
-  }
-});
-
-const weddingDate = new Date(2026, 10, 22, 11, 0, 0).getTime();
-
-function updateCountdown() {
-  const remaining = weddingDate - Date.now();
-
-  const values = remaining <= 0
-    ? [0, 0, 0, 0]
-    : [
-        Math.floor(remaining / 86400000),
-        Math.floor((remaining % 86400000) / 3600000),
-        Math.floor((remaining % 3600000) / 60000),
-        Math.floor((remaining % 60000) / 1000)
-      ];
-
-  ['days', 'hours', 'minutes', 'seconds'].forEach((id, i) => {
-    document.getElementById(id).textContent =
-      String(values[i]).padStart(2, '0');
-  });
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-document.getElementById('rsvp-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('guest-name').value.trim();
-  const attendance =
-    document.querySelector('input[name="attendance"]:checked')?.value || '';
-  const message = document.getElementById('message').value.trim();
-
-  // WhatsApp number: country code + number, without + or spaces.
-  const whatsappNumber = '917994579109';
-
-  const text = encodeURIComponent(
-    `Wedding RSVP - Mohammed Jishan & Irfana Farhath\n` +
-    `Name: ${name}\nAttendance: ${attendance}\nMessage: ${message}`
-  );
-
-  window.open(
-    `https://wa.me/${whatsappNumber
+</body>
+</html>
