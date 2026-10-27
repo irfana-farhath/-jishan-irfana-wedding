@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a56">
+  <title>Jishan & Irfana | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #102a56;
+      --navy-deep: #081a38;
+      --ivory: #f5ebdd;
+      --gold: #c5a568;
+      --rose: #e5cfcb;
+      --ink: #382c2a;
+      --muted: #e8ddcf;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--ivory); color: var(--ivory);
+      font-family: 'Montserrat', sans-serif; font-weight: 300;
+    }
+    a { color: inherit; }
+    .page { max-width: 780px; margin: 0 auto; overflow: hidden; background: var(--navy); }
+    .hero {
+      min-height: 100svh; padding: 36px 22px 54px; position: relative; display: flex;
+      align-items: center; justify-content: center; text-align: center; isolation: isolate;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(39,72,124,.58), transparent 55%),
+        linear-gradient(145deg, #0a1b39, var(--navy) 52%, #091a36);
+    }
+    .hero:before, .hero:after {
+      content: ""; position: absolute; z-index: -1; width: 260px; height: 380px;
+      border: 1px solid rgba(197,165,104,.38); border-radius: 50%; transform: rotate(35deg);
+    }
+    .hero:before { left: -170px; top: 8%; }
+    .hero:after { right: -170px; bottom: 5%; transform: rotate(-35deg); }
+    .frame { width: min(100%, 540px); border: 1px solid var(--gold); padding: 52px 24px 44px; position: relative; }
+    .frame:before { content: "✦"; position: absolute; top: -12px; left: calc(50% - 12px); color: var(--gold); background: var(--navy); padding: 0 7px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .28em; font-size: .67rem; line-height: 1.9; color: var(--muted); }
+    .script { font-family: 'Great Vibes', cursive; font-weight: 400; }
+    h1 { font-size: clamp(3.5rem, 13vw, 6.4rem); line-height: .95; font-weight: 400; margin: 25px 0 18px; color: var(--ivory); }
+    .amp { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.1rem; color: var(--gold); margin: 8px 0; }
+    .hero-date { font-family: 'Cormorant Garamond', serif; letter-spacing: .18em; font-size: 1.08rem; margin: 27px 0 8px; color: var(--gold); }
+    .ornament { color: var(--gold); letter-spacing: .4em; margin: 20px 0; }
+    .section { padding: 68px 25px; text-align: center; position: relative; }
+    .cream { background: var(--ivory); color: var(--ink); }
+    .navy { background: var(--navy); color: var(--ivory); }
+    .kicker { color: var(--gold); text-transform: uppercase; letter-spacing: .24em; font-size: .65rem; margin-bottom: 13px; }
+    h2 { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: clamp(2.7rem, 9vw, 4.2rem); line-height: 1.05; margin: 0 0 20px; }
+    .cream h2 { color: var(--navy); }
+    .lead { max-width: 490px; margin: 0 auto; line-height: 1.9; font-size: .9rem; }
+    .thin-rule { height: 1px; width: 74px; background: var(--gold); margin: 25px auto; }
+    .date-card { max-width: 410px; margin: 28px auto 0; border: 1px solid var(--gold); padding: 26px 20px; }
+    .date-number { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; color: var(--navy); line-height: 1; }
+    .date-month { text-transform: uppercase; letter-spacing: .25em; font-size: .75rem; margin-top: 9px; }
+    .countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .count-unit { min-width: 68px; padding: 13px 9px; border: 1px solid rgba(197,165,104,.65); }
+    .count-unit strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--gold); }
+    .count-unit span { display: block; text-transform: uppercase; font-size: .55rem; letter-spacing: .12em; margin-top: 4px; }
+    .location-mark { color: var(--gold); font-size: 1.8rem; margin-bottom: 12px; }
+    .button { display: inline-block; margin-top: 25px; padding: 14px 24px; border-radius: 2px; background: var(--navy); color: var(--ivory); text-decoration: none; text-transform: uppercase; letter-spacing: .12em; font-size: .66rem; border: 1px solid var(--gold); transition: .2s; }
+    .button:hover { background: var(--navy-deep); }
+    .schedule { max-width: 420px; margin: 25px auto 0; text-align: left; }
+    .schedule-row { display: grid; grid-template-columns: 85px 1fr; gap: 17px; padding: 16px 0; border-bottom: 1px solid rgba(197,165,104,.3); }
+    .schedule-row time { color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; }
+    .schedule-row p { margin: 2px 0 0; font-size: .85rem; line-height: 1.6; }
+    .form-wrap { max-width: 480px; margin: 28px auto 0; text-align: left; }
+    label { display: block; font-size: .75rem; margin: 18px 0 8px; }
+    input[type="text"], textarea, select {
+      width: 100%; border: 1px solid rgba(197,165,104,.75); background: rgba(255,255,255,.04);
+      color: var(--ivory); padding: 13px 12px; border-radius: 0; font: inherit; outline: none;
+    }
+    select option { color: var(--navy); }
+    .choices { display: flex; gap: 12px; flex-wrap: wrap; }
+    .choices label { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+    input[type="radio"] { accent-color: var(--gold); }
+    .submit { width: 100%; cursor: pointer; font: inherit; margin-top: 24px; padding: 15px; background: var(--ivory); color: var(--navy); border: 1px solid var(--gold); text-transform: uppercase; letter-spacing: .14em; font-size: .68rem; }
+    .small-note { font-size: .7rem; line-height: 1.7; opacity: .78; margin-top: 16px; }
+    .footer { padding: 42px 20px 50px; text-align: center; background: var(--navy-deep); }
+    .footer .script { font-size: 3rem; color: var(--ivory); }
+    .footer p { font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    @media (min-width: 700px) { .section { padding: 85px 50px; } .hero { padding: 50px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" id="home">
+      <div class="frame">
+        <div class="eyebrow">With love and the blessings of our families</div>
+        <div class="ornament">✦ &nbsp; ✧ &nbsp; ✦</div>
+        <p class="script" style="font-size:1.8rem;margin:0;color:var(--gold)">Together with our families</p>
+        <h1 class="script">Jishan <span class="amp">&</span> Irfana</h1>
+        <div class="thin-rule"></div>
+        <p class="eyebrow">Invite you to celebrate our wedding</p>
+        <div class="hero-date">22 · 11 · 2026</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin:7px 0 0">Makkaraparamba</p>
+        <div class="ornament">❦</div>
+        <a class="button" href="#invitation">Open the invitation</a>
+      </div>
+    </section>
+
+    <section class="section cream" id="invitation">
+      <div class="kicker">A special day</div>
+      <h2>Dear family & friends</h2>
+      <div class="thin-rule"></div>
+      <p class="lead">With grateful hearts and joyful anticipation, we invite you to join us as we begin this beautiful new chapter together. Your presence and blessings will make our day even more meaningful.</p>
+      <div class="date-card">
+        <div class="kicker">Save the date</div>
+        <div class="date-number">22</div>
+        <div class="date-month">November · 2026</div>
+        <div class="ornament">✧ ✦ ✧</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Makkaraparamba, Kerala</div>
+      </div>
+    </section>
+
+    <section class="section navy" id="countdown-section">
+      <div class="kicker">The big day is coming</div>
+      <h2>Counting the moments</h2>
+      <p class="lead">Until we celebrate our wedding day with the people we love.</p>
+      <div class="countdown" aria-label="Countdown to wedding">
+        <div class="count-unit"><strong id="days">--</strong><span>Days</span></div>
+        <div class="count-unit"><strong id="hours">--</strong><span>Hours</span></div>
+        <div class="count-unit"><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div class="count-unit"><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <section class="section cream" id="venue">
+      <div class="location-mark">✧</div>
+      <div class="kicker">Where we meet</div>
+      <h2>The location</h2>
+      <p class="lead">We look forward to celebrating with you in Makkaraparamba, Kerala.</p>
+      <a class="button" href="https://www.google.com/maps/search/?api=1&query=Makkaraparamba%2C+Kerala" target="_blank" rel="noopener">View on Google Maps</a>
+      <p class="small-note" style="color:var(--ink)">The exact venue and event timings can be added when confirmed.</p>
+    </section>
+
+    <section class="section navy" id="schedule">
+      <div class="kicker">Join us in celebration</div>
+      <h2>Wedding day</h2>
+      <p class="lead">We can't wait to share this memorable day with you.</p>
+      <div class="schedule">
+        <div class="schedule-row"><time>22 Nov</time><p><strong>Wedding celebration</strong><br><span style="opacity:.75">Makkaraparamba</span></p></div>
+        <div class="schedule-row"><time>Details</time><p>Exact timings and event details will be shared soon.</p></div>
+      </div>
+    </section>
+
+    <section class="section navy" id="rsvp" style="padding-top:25px">
+      <div class="kicker">Kindly reply</div>
+      <h2>Will you join us?</h2>
+      <p class="lead">Please let us know if you can celebrate with us.</p>
+      <form class="form-wrap" id="rsvp-form">
+        <label for="guest-name">Your name</label>
+        <input id="guest-name" name="name" type="text" placeholder="Enter your full name" required>
+        <label>Will you be attending?</label>
+        <div class="choices">
+          <label><input type="radio" name="attendance" value="Joyfully accepts" required> Joyfully accepts</label>
+          <label><input type="radio" name="attendance" value="Regretfully declines"> Regretfully declines</label>
+        </div>
+        <label for="message">A message for the couple (optional)</label>
+        <textarea id="message" name="message" rows="3" placeholder="Write your wishes..."></textarea>
+        <button class="submit" type="submit">Prepare RSVP</button>
+        <p class="small-note">This sample form opens a message draft in WhatsApp. Replace the demo contact number in the code with the number you want guests to contact before publishing.</p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="script">Jishan & Irfana</div>
+      <p>22 November 2026 · Makkaraparamba</p>
+      <div class="ornament">✦ &nbsp; ❦ &nbsp; ✦</div>
+      <div class="eyebrow">With love, we look forward to seeing you</div>
+    </footer>
+  </main>
+  <script>
+    // Wedding date: 22 November 2026, midnight local time.
+    const weddingDate = new Date(2026, 10, 22, 0, 0, 0).getTime();
+    function updateCountdown() {
+      const remaining = weddingDate - Date.now();
+      const values = remaining <= 0
+        ? [0, 0, 0, 0]
+        : [
+            Math.floor(remaining / 86400000),
+            Math.floor((remaining % 86400000) / 3600000),
+            Math.floor((remaining % 3600000) / 60000),
+            Math.floor((remaining % 60000) / 1000)
+          ];
+      ['days', 'hours', 'minutes', 'seconds'].forEach((id, i) => {
+        document.getElementById(id).textContent = String(values[i]).padStart(2, '0');
+      });
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.getElementById('rsvp-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('guest-name').value.trim();
+      const attendance = document.querySelector('input[name="attendance"]:checked')?.value || '';
+      const message = document.getElementById('message').value.trim();
+      const text = `Wedding RSVP - Jishan & Irfana%0AName: ${encodeURIComponent(name)}%0AAttendance: ${encodeURIComponent(attendance)}%0AMessage: ${encodeURIComponent(message)}`;
+      // Replace 910000000000 with the intended WhatsApp number including country code.
+      const whatsappNumber = '910000000000';
+      if (whatsappNumber === '910000000000') {
+        alert('The RSVP design is ready. To send responses, replace the demo WhatsApp number in index.html with your chosen contact number.');
+        return;
+      }
+      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
