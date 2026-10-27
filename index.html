@@ -1,127 +1,650 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#102a56">
-  <title>Jishan & Irfana | Wedding Invitation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #102a56;
-      --navy-deep: #081a38;
-      --ivory: #f5ebdd;
-      --gold: #c5a568;
-      --rose: #e5cfcb;
-      --ink: #382c2a;
-      --muted: #e8ddcf;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; background: var(--ivory); color: var(--ivory);
-      font-family: 'Montserrat', sans-serif; font-weight: 301;
-    }
-    a { color: inherit; }
-    .page { max-width: 780px; margin: 0 auto; overflow: hidden; background: var(--navy); }
-    .hero {
-      min-height: 100svh; padding: 36px 22px 54px; position: relative; display: flex;
-      align-items: center; justify-content: center; text-align: center; isolation: isolate;
-      background:
-        radial-gradient(ellipse at 50% 40%, rgba(39,72,124,.58), transparent 55%),
-        linear-gradient(145deg, #0a1b39, var(--navy) 52%, #091a36);
-    }
-    .hero:before, .hero:after {
-      content: ""; position: absolute; z-index: -1; width: 260px; height: 380px;
-      border: 1px solid rgba(197,165,104,.38); border-radius: 50%; transform: rotate(35deg);
-    }
-    .hero:before { left: -170px; top: 8%; }
-    .hero:after { right: -170px; bottom: 5%; transform: rotate(-35deg); }
-    .frame { width: min(100%, 540px); border: 1px solid var(--gold); padding: 52px 24px 44px; position: relative; }
-    .frame:before { content: "✦"; position: absolute; top: -12px; left: calc(50% - 12px); color: var(--gold); background: var(--navy); padding: 0 7px; }
-    .eyebrow { text-transform: uppercase; letter-spacing: .28em; font-size: .67rem; line-height: 1.9; color: var(--muted); }
-    .script { font-family: 'Great Vibes', cursive; font-weight: 400; }
-    h1 { font-size: clamp(3.5rem, 13vw, 6.4rem); line-height: .95; font-weight: 400; margin: 25px 0 18px; color: var(--ivory); }
-    .amp { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.1rem; color: var(--gold); margin: 8px 0; }
-    .hero-date { font-family: 'Cormorant Garamond', serif; letter-spacing: .18em; font-size: 1.08rem; margin: 27px 0 8px; color: var(--gold); }
-    .ornament { color: var(--gold); letter-spacing: .4em; margin: 20px 0; }
-    .section { padding: 68px 25px; text-align: center; position: relative; }
-    .cream { background: var(--ivory); color: var(--ink); }
-    .navy { background: var(--navy); color: var(--ivory); }
-    .kicker { color: var(--gold); text-transform: uppercase; letter-spacing: .24em; font-size: .65rem; margin-bottom: 13px; }
-    h2 { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: clamp(2.7rem, 9vw, 4.2rem); line-height: 1.05; margin: 0 0 20px; }
-    .cream h2 { color: var(--navy); }
-    .lead { max-width: 490px; margin: 0 auto; line-height: 1.9; font-size: .9rem; }
-    .thin-rule { height: 1px; width: 74px; background: var(--gold); margin: 25px auto; }
-    .date-card { max-width: 410px; margin: 28px auto 0; border: 1px solid var(--gold); padding: 26px 20px; }
-    .date-number { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; color: var(--navy); line-height: 1; }
-    .date-month { text-transform: uppercase; letter-spacing: .25em; font-size: .75rem; margin-top: 9px; }
-    .countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-    .count-unit { min-width: 68px; padding: 13px 9px; border: 1px solid rgba(197,165,104,.65); }
-    .count-unit strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--gold); }
-    .count-unit span { display: block; text-transform: uppercase; font-size: .55rem; letter-spacing: .12em; margin-top: 4px; }
-    .location-mark { color: var(--gold); font-size: 1.8rem; margin-bottom: 12px; }
-    .button { display: inline-block; margin-top: 25px; padding: 14px 24px; border-radius: 2px; background: var(--navy); color: var(--ivory); text-decoration: none; text-transform: uppercase; letter-spacing: .12em; font-size: .66rem; border: 1px solid var(--gold); transition: .2s; }
-    .button:hover { background: var(--navy-deep); }
-    .schedule { max-width: 420px; margin: 25px auto 0; text-align: left; }
-    .schedule-row { display: grid; grid-template-columns: 85px 1fr; gap: 17px; padding: 16px 0; border-bottom: 1px solid rgba(197,165,104,.3); }
-    .schedule-row time { color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; }
-    .schedule-row p { margin: 2px 0 0; font-size: .85rem; line-height: 1.6; }
-    .form-wrap { max-width: 480px; margin: 28px auto 0; text-align: left; }
-    label { display: block; font-size: .75rem; margin: 18px 0 8px; }
-    input[type="text"], textarea, select {
-      width: 100%; border: 1px solid rgba(197,165,104,.75); background: rgba(255,255,255,.04);
-      color: var(--ivory); padding: 13px 12px; border-radius: 0; font: inherit; outline: none;
-    }
-    select option { color: var(--navy); }
-    .choices { display: flex; gap: 12px; flex-wrap: wrap; }
-    .choices label { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
-    input[type="radio"] { accent-color: var(--gold); }
-    .submit { width: 100%; cursor: pointer; font: inherit; margin-top: 24px; padding: 15px; background: var(--ivory); color: var(--navy); border: 1px solid var(--gold); text-transform: uppercase; letter-spacing: .14em; font-size: .68rem; }
-    .small-note { font-size: .7rem; line-height: 1.7; opacity: .78; margin-top: 16px; }
-    .footer { padding: 42px 20px 50px; text-align: center; background: var(--navy-deep); }
-    .footer .script { font-size: 3rem; color: var(--ivory); }
-    .footer p { font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
-    @media (min-width: 700px) { .section { padding: 85px 50px; } .hero { padding: 50px; } }
-  </style>
-</head>
-<body>
-  <main class="page">
-    <section class="hero" id="home">
-      <div class="frame">
-        <div class="eyebrow">With love and the blessings of our families</div>
-        <div class="ornament">❤ &nbsp; ✧ &nbsp; ❤</div>
-        <p class="script" style="font-size:1.8rem;margin:0;color:var(--gold)">Together with our families</p>
-        <h1 class="script">Mohammed Jishan <span class="amp">&</span> Irfana Farhath</h1>
-        <div class="thin-rule"></div>
-        <p class="eyebrow">Invite you to celebrate our love </p>
-        <div class="hero-date">22 · 11 · 2026</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin:7px 0 0">Sunday, 11:00AM</p>
-        <div class="ornament">❦</div>
-        <a class="button" href="#invitation">Open the invitation</a>
-      </div>
-    </section>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07162d">
+<title>Mohammed Jishan & Irfana Farhath | Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <section class="section cream" id="invitation">
-      <div class="kicker">A special day</div>
-      <h2>Dear family & friends</h2>
-      <div class="thin-rule"></div>
-      <p class="lead">With grateful hearts and joyful anticipation, we invite you to join us as we begin this beautiful new chapter together. Your presence and blessings will make our day even more meaningful.</p>
+<style>
+:root {
+  --midnight: #07162d;
+  --blue: #10294b;
+  --blue2: #18385d;
+  --gold: #b99a60;
+  --gold-light: #d4bd8b;
+  --ivory: #f3ead9;
+  --ink: #17243a;
+  --muted: #d8cbb4;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--midnight);
+  color: var(--ivory);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+.page {
+  max-width: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--midnight);
+  box-shadow: 0 0 55px #0008;
+}
+
+.screen {
+  min-height: 100svh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.satin {
+  background:
+    radial-gradient(ellipse at 12% 10%, #31507855, transparent 25%),
+    radial-gradient(ellipse at 90% 88%, #29456855, transparent 27%),
+    linear-gradient(112deg, #061126 0%, #102746 20%, #07162d 43%, #173353 65%, #07152b 100%);
+}
+
+.satin::before,
+.satin::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 36%;
+  height: 130%;
+  top: -12%;
+  opacity: .6;
+  filter: blur(1px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8da0b51a 22%,
+    #0005 38%,
+    #a6b6c71a 52%,
+    transparent 75%
+  );
+  transform: rotate(14deg);
+  border-radius: 48%;
+}
+
+.satin::before { left: -18%; }
+.satin::after {
+  right: -19%;
+  transform: rotate(-14deg);
+}
+
+/* Circular decorative arcs, not mosque arches */
+.arc {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid #b99a6055;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arc.outer {
+  width: min(92%, 760px);
+  height: min(150vw, 1060px);
+  top: 4%;
+  max-height: calc(100% - 36px);
+}
+
+.arc.inner {
+  width: min(84%, 690px);
+  height: min(140vw, 1000px);
+  top: 7%;
+  max-height: calc(100% - 60px);
+  border-color: #d4bd8b35;
+}
+
+/* Subtle blue rose and vine decorations */
+.flower-vine {
+  position: absolute;
+  pointer-events: none;
+  width: clamp(105px, 22vw, 190px);
+  opacity: .30;
+  filter: saturate(.8);
+}
+
+.flower-vine.left {
+  left: -22px;
+  top: 8%;
+  transform: rotate(-8deg);
+}
+
+.flower-vine.right {
+  right: -22px;
+  bottom: 7%;
+  transform: scaleX(-1) rotate(-8deg);
+}
+
+.opening {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 54px 22px 42px;
+}
+
+.opening-content {
+  width: min(100%, 590px);
+  position: relative;
+  padding: 34px 18px 30px;
+}
+
+.bismillah {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 5vw, 2.35rem);
+  color: var(--gold-light);
+  margin: 0 0 12px;
+  direction: rtl;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  font-size: .63rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+.opening-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.7rem, 9vw, 4.8rem);
+  line-height: 1.03;
+  margin: 17px 0 8px;
+  color: var(--ivory);
+}
+
+.opening-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 7.3vw, 3.55rem);
+  line-height: 1.12;
+  margin: 26px 0 8px;
+  color: var(--gold-light);
+}
+
+.opening-names .name-one { display: block; }
+
+.amp {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: var(--ivory);
+  margin: 2px 0;
+}
+
+.gold-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--gold);
+  margin: 18px auto;
+}
+
+.gold-rule::before,
+.gold-rule::after {
+  content: "";
+  height: 1px;
+  width: 55px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.gold-rule::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.date-line {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: .09em;
+  font-size: 1.1rem;
+  color: var(--ivory);
+  line-height: 1.9;
+}
+
+.date-line .calendar {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  margin-right: 7px;
+}
+
+.location-line {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 2;
+  margin-top: 5px;
+}
+
+.verse {
+  max-width: 430px;
+  margin: 18px auto 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #e6dccb;
+}
+
+.verse small {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .19em;
+  font-size: .56rem;
+  margin-top: 9px;
+  color: var(--gold-light);
+}
+
+.primary-btn,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+  padding: 15px 25px;
+  border: 1px solid var(--gold-light);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #173252, #07162d 70%);
+  color: var(--ivory);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .65rem;
+  box-shadow: 0 0 0 4px #b99a6010, 0 9px 25px #0004;
+  transition: transform .2s, background .2s;
+}
+
+.primary-btn:hover,
+.button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #254568, #0b1c35);
+}
+
+.music-control {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  z-index: 5;
+  border: 1px solid #b99a6070;
+  border-radius: 30px;
+  padding: 10px 13px;
+  background: #07162dcc;
+  color: var(--ivory);
+  font-size: .62rem;
+  letter-spacing: .1em;
+}
+
+.music-note {
+  color: var(--gold-light);
+  margin-right: 5px;
+}
+
+.section {
+  padding: 66px 25px;
+  text-align: center;
+  position: relative;
+}
+
+.cream {
+  background: var(--ivory);
+  color: var(--ink);
+}
+
+.navy {
+  background: linear-gradient(145deg, #0a1c35, #10294b 55%, #07162d);
+  color: var(--ivory);
+}
+
+.section h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.8rem, 9vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 17px;
+  color: var(--gold-light);
+}
+
+.cream h2 { color: var(--blue); }
+
+.lead {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-size: .88rem;
+}
+
+.date-card {
+  max-width: 410px;
+  margin: 28px auto 0;
+  padding: 26px 18px;
+  border: 1px solid #b99a6080;
+  outline: 1px solid #b99a6028;
+  outline-offset: 5px;
+}
+
+.date-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.date-month {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .72rem;
+  margin-top: 8px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+
+.count-unit {
+  min-width: 67px;
+  padding: 12px 8px;
+  border: 1px solid #b99a6070;
+  background: #ffffff06;
+}
+
+.count-unit strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+.count-unit span {
+  display: block;
+  text-transform: uppercase;
+  font-size: .52rem;
+  letter-spacing: .1em;
+  margin-top: 4px;
+}
+
+.schedule {
+  max-width: 420px;
+  margin: 25px auto 0;
+  text-align: left;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid #b99a6030;
+}
+
+.schedule-row time {
+  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+}
+
+.schedule-row p {
+  margin: 2px 0 0;
+  font-size: .84rem;
+  line-height: 1.7;
+}
+
+.form-wrap {
+  max-width: 480px;
+  margin: 25px auto 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: .75rem;
+  margin: 17px 0 8px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  border: 1px solid #b99a6080;
+  background: #ffffff08;
+  color: var(--ivory);
+  padding: 13px 12px;
+  border-radius: 0;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #d8cbb499;
+}
+
+.choices {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.choices label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+input[type="radio"] { accent-color: var(--gold); }
+
+.submit {
+  width: 100%;
+  margin-top: 23px;
+  padding: 15px;
+  background: var(--ivory);
+  color: var(--blue);
+  border: 1px solid var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .68rem;
+}
+
+.small-note {
+  font-size: .7rem;
+  line-height: 1.7;
+  opacity: .8;
+  margin-top: 15px;
+}
+
+.footer {
+  padding: 42px 20px 48px;
+  text-align: center;
+  background: #040d1c;
+}
+
+.footer .script {
+  font-size: 3.2rem;
+  color: var(--ivory);
+}
+
+.footer p {
+  font-size: .62rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+@media (min-width: 700px) {
+  .section { padding: 82px 50px; }
+  .opening { padding: 60px; }
+  .opening-content { padding: 45px 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+  <!-- OPENING COVER -->
+  <section class="screen satin opening" id="cover">
+    <div class="arc outer"></div>
+    <div class="arc inner"></div>
+
+    <!-- Subtle blue rose and vine decoration -->
+    <svg class="flower-vine left" viewBox="0 0 180 390" aria-hidden="true">
+      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
+        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
+        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
+                 M63 268 Q103 250 103 220 Q69 229 63 268
+                 M77 183 Q39 165 43 137 Q76 151 77 183
+                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
+        <path d="M36 342 Q70 343 80 315 M54 290 Q31 260 43 239
+                 M87 151 Q112 159 120 137"/>
+      </g>
+      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
+        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
+                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
+        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
+                 C133 44 118 56 109 48Z"/>
+        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
+      </g>
+      <g fill="#9cabc0" opacity=".7">
+        <circle cx="75" cy="93" r="2"/>
+        <circle cx="88" cy="87" r="2"/>
+        <circle cx="82" cy="102" r="2"/>
+        <circle cx="38" cy="211" r="2"/>
+        <circle cx="45" cy="220" r="2"/>
+      </g>
+    </svg>
+
+    <svg class="flower-vine right" viewBox="0 0 180 390" aria-hidden="true">
+      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
+        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
+        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
+                 M63 268 Q103 250 103 220 Q69 229 63 268
+                 M77 183 Q39 165 43 137 Q76 151 77 183
+                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
+      </g>
+      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
+        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
+                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
+        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
+                 C133 44 118 56 109 48Z"/>
+        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
+      </g>
+    </svg>
+
+    <button class="music-control" id="music-toggle" type="button">
+      <span class="music-note">♫</span>
+      <span id="music-label">PLAY MUSIC</span>
+    </button>
+
+    <div class="opening-content">
+      <p class="bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+      <div class="kicker">With the blessings of Allah and our families</div>
+      <div class="gold-rule">✧ ❦ ✧</div>
+
+      <p class="kicker">You are warmly invited to celebrate</p>
+      <h1 class="opening-title">A Wedding Celebration</h1>
+
+      <div class="opening-names">
+        <span class="name-one">Mohammed Jishan</span>
+        <span class="amp">&</span>
+        <span>Irfana Farhath</span>
+      </div>
+
+      <div class="gold-rule">❦</div>
+
+      <div class="date-line">
+        <span class="calendar">🗓️</span>
+        Sunday, 22 November 2026<br>
+        11:00 AM
+      </div>
+
+      <div class="location-line">Makkaraparamba · Kerala</div>
+
+      <p class="verse">
+        “And He placed between you affection and mercy.”
+        <small>Qur’an 30:21 · excerpt</small>
+      </p>
+
+      <button class="primary-btn" id="open-invitation" type="button">
+        Here's Your Invitation <span aria-hidden="true">→</span>
+      </button>
+
+      <div class="gold-rule">✧</div>
+      <p class="kicker" style="margin:0">In shā’ Allāh · إن شاء الله</p>
+    </div>
+  </section>
+
+  <!-- DETAILS ARE HIDDEN UNTIL THE COVER BUTTON IS TAPPED -->
+  <div id="invitation" hidden>
+
+    <section class="section cream" id="welcome">
+      <div class="kicker">Bismillah · In the name of Allah</div>
+      <h2>Dear family &amp; friends</h2>
+      <div class="gold-rule">❦</div>
+
+      <p class="lead">
+        With grateful hearts and the blessings of Allah, we invite you
+        to join us as we begin this beautiful new chapter together.
+        Your presence, prayers and blessings will make our day even
+        more meaningful.
+      </p>
+
       <div class="date-card">
-        <div class="kicker">Mark you calendar</div>
+        <div class="kicker">Please save the date</div>
         <div class="date-number">22</div>
         <div class="date-month">November · 2026</div>
-        <div class="ornament">✧ ✦ ✧</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Makkaraparamba, Kerala</div>
+        <div class="gold-rule">✧ ❦ ✧</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem">
+          Makkaraparamba, Kerala
+        </div>
+        <p style="margin:10px 0 0;font-size:.8rem">🗓️ Sunday · 11:00 AM</p>
       </div>
     </section>
 
     <section class="section navy" id="countdown-section">
-      <div class="kicker">The big day is coming</div>
+      <div class="kicker">Until our special day</div>
       <h2>Counting the moments</h2>
-      <p class="lead">Until we celebrate our love with the people we love.</p>
+      <p class="lead">We look forward to celebrating with you, In shā’ Allāh.</p>
+
       <div class="countdown" aria-label="Countdown to wedding">
         <div class="count-unit"><strong id="days">--</strong><span>Days</span></div>
         <div class="count-unit"><strong id="hours">--</strong><span>Hours</span></div>
@@ -131,75 +654,968 @@
     </section>
 
     <section class="section navy" id="schedule">
-      <div class="kicker">Join us in celebration</div>
+      <div class="kicker">The celebration</div>
       <h2>Wedding day</h2>
-      <p class="lead">We can't wait to share this memorable day with you.</p>
+      <p class="lead">A day of love, prayers and new beginnings.</p>
+
       <div class="schedule">
-        <div class="schedule-row"><time>22 Nov</time><p><strong>Wedding celebration</strong><br><span style="opacity:.75">Makkaraparamba</span></p></div>
-        <div class="schedule-row"><time>Details</time><p>Kachinikkad, Makkaraparamba</p></div>
+        <div class="schedule-row">
+          <time>11:00 AM</time>
+          <p>
+            <strong>Wedding celebration</strong><br>
+            <span style="opacity:.75">Sunday, 22 November 2026</span>
+          </p>
+        </div>
+        <div class="schedule-row">
+          <time>Venue</time>
+          <p>Makkaraparamba, Kachinikkad, Kerala</p>
+        </div>
       </div>
+
+      <p class="verse">
+        “Our Lord, grant us from among our spouses and offspring comfort to our eyes.”
+        <small>Qur’an 25:74 · excerpt</small>
+      </p>
     </section>
 
-    <section class="section navy" id="rsvp" style="padding-top:25px">
+    <section class="section navy" id="rsvp">
       <div class="kicker">Kindly reply</div>
       <h2>Will you join us?</h2>
       <p class="lead">Please let us know if you can celebrate with us.</p>
+
       <form class="form-wrap" id="rsvp-form">
         <label for="guest-name">Your name</label>
-        <input id="guest-name" name="name" type="text" placeholder="Enter your full name" required>
+        <input id="guest-name" name="name" type="text"
+               placeholder="Enter your full name" required>
+
         <label>Will you be attending?</label>
         <div class="choices">
-          <label><input type="radio" name="attendance" value="Joyfully accepts" required> Joyfully accepts</label>
-          <label><input type="radio" name="attendance" value="Regretfully declines"> Regretfully declines</label>
+          <label>
+            <input type="radio" name="attendance"
+                   value="Joyfully accepts" required>
+            Joyfully accepts
+          </label>
+          <label>
+            <input type="radio" name="attendance"
+                   value="Regretfully declines">
+            Regretfully declines
+          </label>
         </div>
+
         <label for="message">A message for the couple (optional)</label>
-        <textarea id="message" name="message" rows="3" placeholder="Write your wishes..."></textarea>
+        <textarea id="message" name="message" rows="3"
+                  placeholder="Write your wishes..."></textarea>
+
         <button class="submit" type="submit">Prepare RSVP</button>
-        <p class="small-note">+91 7994579109 </p>
+        <p class="small-note">RSVP contact: +91 7994579109</p>
       </form>
     </section>
 
     <footer class="footer">
-      <div class="script">Jishan & Irfana</div>
+      <div class="script">Jishan &amp; Irfana</div>
       <p>22 November 2026 · Makkaraparamba</p>
-      <div class="ornament">✦ &nbsp; ❦ &nbsp; ✦</div>
-      <div class="eyebrow">With love, we look forward to seeing you</div>
+      <div class="gold-rule">✦ ❦ ✦</div>
+      <div class="kicker">
+        May Allah bless our union with love, peace and mercy
+      </div>
+      <button class="button" id="back-to-cover" type="button">
+        Back to cover ↑
+      </button>
     </footer>
-  </main>
-  <script>
-    // Wedding date: 22 November 2026, midnight local time.
-    const weddingDate = new Date(2026, 10, 22, 0, 0, 0).getTime();
-    function updateCountdown() {
-      const remaining = weddingDate - Date.now();
-      const values = remaining <= 0
-        ? [0, 0, 0, 0]
-        : [
-            Math.floor(remaining / 86400000),
-            Math.floor((remaining % 86400000) / 3600000),
-            Math.floor((remaining % 3600000) / 60000),
-            Math.floor((remaining % 60000) / 1000)
-          ];
-      ['days', 'hours', 'minutes', 'seconds'].forEach((id, i) => {
-        document.getElementById(id).textContent = String(values[i]).padStart(2, '0');
-      });
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+  </div>
+</main>
 
-    document.getElementById('rsvp-form').addEventListener('submit', function (event) {
-      event.preventDefault();
-      const name = document.getElementById('guest-name').value.trim();
-      const attendance = document.querySelector('input[name="attendance"]:checked')?.value || '';
-      const message = document.getElementById('message').value.trim();
-      const text = `Wedding RSVP - Jishan & Irfana%0AName: ${encodeURIComponent(name)}%0AAttendance: ${encodeURIComponent(attendance)}%0AMessage: ${encodeURIComponent(message)}`;
-      // Replace 910000000000 with the intended WhatsApp number including country code.
-      const whatsappNumber = '910000000000';
-      if (whatsappNumber === '910000000000') {
-        alert('The RSVP design is ready. To send responses, replace the demo WhatsApp number in index.html with your chosen contact number.');
-        return;
-      }
-      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank', 'noopener');
-    });
-  </script>
-</body>
-</html>
+<!-- Upload a licensed audio file named music.mp3 to the repository root -->
+<audio id="background-music" loop preload="none">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const cover = document.getElementById('cover');
+const invitation = document.getElementById('invitation');
+const openButton = document.getElementById('open-invitation');
+const backButton = document.getElementById('back-to-cover');
+const audio = document.getElementById('background-music');
+const musicToggle = document.getElementById('music-toggle');
+const musicLabel = document.getElementById('music-label');
+
+openButton.addEventListener('click', () => {
+  invitation.hidden = false;
+  cover.hidden = true;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateCountdown();
+});
+
+backButton.addEventListener('click', () => {
+  invitation.hidden = true;
+  cover.hidden = false;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+musicToggle.addEventListener('click', async () => {
+  if (audio.paused) {
+    try {
+      await audio.play();
+      musicLabel.textContent = 'PAUSE MUSIC';
+      musicToggle.setAttribute('aria-label', 'Pause background music');
+    } catch (error) {
+      alert('Music could not play. Upload a music file named music.mp3 to the same project folder, then try again.');
+    }
+  } else {
+    audio.pause();
+    musicLabel.textContent = 'PLAY MUSIC';
+    musicToggle.setAttribute('aria-label', 'Play background music');
+  }
+});
+
+const weddingDate = new Date(2026, 10, 22, 11, 0, 0).getTime();
+
+function updateCountdown() {
+  const remaining = weddingDate - Date.now();
+
+  const values = remaining <= 0
+    ? [0, 0, 0, 0]
+    : [
+        Math.floor(remaining / 86400000),
+        Math.floor((remaining % 86400000) / 3600000),
+        Math.floor((remaining % 3600000) / 60000),
+        Math.floor((remaining % 60000) / 1000)
+      ];
+
+  ['days', 'hours', 'minutes', 'seconds'].forEach((id, i) => {
+    document.getElementById(id).textContent =
+      String(values[i]).padStart(2, '0');
+  });
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('guest-name').value.trim();
+  const attendance =
+    document.querySelector('input[name="attendance"]:checked')?.value || '';
+  const message = document.getElementById('message').value.trim();
+
+  // WhatsApp number: country code + number, without + or spaces.
+  const whatsappNumber = '917994579109';
+
+  const text = encodeURIComponent(
+    `Wedding RSVP - Mohammed Jishan & Irfana Farhath\n` +
+    `Name: ${name}\nAttendance: ${attendance}\nMessage: ${message}`
+  );
+
+  window.open(
+    `https://wa.me/${whatsappNumber
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07162d">
+<title>Mohammed Jishan & Irfana Farhath | Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --midnight: #07162d;
+  --blue: #10294b;
+  --blue2: #18385d;
+  --gold: #b99a60;
+  --gold-light: #d4bd8b;
+  --ivory: #f3ead9;
+  --ink: #17243a;
+  --muted: #d8cbb4;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--midnight);
+  color: var(--ivory);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+.page {
+  max-width: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--midnight);
+  box-shadow: 0 0 55px #0008;
+}
+
+.screen {
+  min-height: 100svh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.satin {
+  background:
+    radial-gradient(ellipse at 12% 10%, #31507855, transparent 25%),
+    radial-gradient(ellipse at 90% 88%, #29456855, transparent 27%),
+    linear-gradient(112deg, #061126 0%, #102746 20%, #07162d 43%, #173353 65%, #07152b 100%);
+}
+
+.satin::before,
+.satin::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 36%;
+  height: 130%;
+  top: -12%;
+  opacity: .6;
+  filter: blur(1px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8da0b51a 22%,
+    #0005 38%,
+    #a6b6c71a 52%,
+    transparent 75%
+  );
+  transform: rotate(14deg);
+  border-radius: 48%;
+}
+
+.satin::before { left: -18%; }
+.satin::after {
+  right: -19%;
+  transform: rotate(-14deg);
+}
+
+/* Circular decorative arcs, not mosque arches */
+.arc {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid #b99a6055;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arc.outer {
+  width: min(92%, 760px);
+  height: min(150vw, 1060px);
+  top: 4%;
+  max-height: calc(100% - 36px);
+}
+
+.arc.inner {
+  width: min(84%, 690px);
+  height: min(140vw, 1000px);
+  top: 7%;
+  max-height: calc(100% - 60px);
+  border-color: #d4bd8b35;
+}
+
+/* Subtle blue rose and vine decorations */
+.flower-vine {
+  position: absolute;
+  pointer-events: none;
+  width: clamp(105px, 22vw, 190px);
+  opacity: .30;
+  filter: saturate(.8);
+}
+
+.flower-vine.left {
+  left: -22px;
+  top: 8%;
+  transform: rotate(-8deg);
+}
+
+.flower-vine.right {
+  right: -22px;
+  bottom: 7%;
+  transform: scaleX(-1) rotate(-8deg);
+}
+
+.opening {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 54px 22px 42px;
+}
+
+.opening-content {
+  width: min(100%, 590px);
+  position: relative;
+  padding: 34px 18px 30px;
+}
+
+.bismillah {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 5vw, 2.35rem);
+  color: var(--gold-light);
+  margin: 0 0 12px;
+  direction: rtl;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  font-size: .63rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+.opening-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.7rem, 9vw, 4.8rem);
+  line-height: 1.03;
+  margin: 17px 0 8px;
+  color: var(--ivory);
+}
+
+.opening-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 7.3vw, 3.55rem);
+  line-height: 1.12;
+  margin: 26px 0 8px;
+  color: var(--gold-light);
+}
+
+.opening-names .name-one { display: block; }
+
+.amp {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: var(--ivory);
+  margin: 2px 0;
+}
+
+.gold-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--gold);
+  margin: 18px auto;
+}
+
+.gold-rule::before,
+.gold-rule::after {
+  content: "";
+  height: 1px;
+  width: 55px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.gold-rule::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.date-line {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: .09em;
+  font-size: 1.1rem;
+  color: var(--ivory);
+  line-height: 1.9;
+}
+
+.date-line .calendar {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  margin-right: 7px;
+}
+
+.location-line {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 2;
+  margin-top: 5px;
+}
+
+.verse {
+  max-width: 430px;
+  margin: 18px auto 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #e6dccb;
+}
+
+.verse small {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .19em;
+  font-size: .56rem;
+  margin-top: 9px;
+  color: var(--gold-light);
+}
+
+.primary-btn,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+  padding: 15px 25px;
+  border: 1px solid var(--gold-light);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #173252, #07162d 70%);
+  color: var(--ivory);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .65rem;
+  box-shadow: 0 0 0 4px #b99a6010, 0 9px 25px #0004;
+  transition: transform .2s, background .2s;
+}
+
+.primary-btn:hover,
+.button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #254568, #0b1c35);
+}
+
+.music-control {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  z-index: 5;
+  border: 1px solid #b99a6070;
+  border-radius: 30px;
+  padding: 10px 13px;
+  background: #07162dcc;
+  color: var(--ivory);
+  font-size: .62rem;
+  letter-spacing: .1em;
+}
+
+.music-note {
+  color: var(--gold-light);
+  margin-right: 5px;
+}
+
+.section {
+  padding: 66px 25px;
+  text-align: center;
+  position: relative;
+}
+
+.cream {
+  background: var(--ivory);
+  color: var(--ink);
+}
+
+.navy {
+  background: linear-gradient(145deg, #0a1c35, #10294b 55%, #07162d);
+  color: var(--ivory);
+}
+
+.section h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.8rem, 9vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 17px;
+  color: var(--gold-light);
+}
+
+.cream h2 { color: var(--blue); }
+
+.lead {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-size: .88rem;
+}
+
+.date-card {
+  max-width: 410px;
+  margin: 28px auto 0;
+  padding: 26px 18px;
+  border: 1px solid #b99a6080;
+  outline: 1px solid #b99a6028;
+  outline-offset: 5px;
+}
+
+.date-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.date-month {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .72rem;
+  margin-top: 8px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+
+.count-unit {
+  min-width: 67px;
+  padding: 12px 8px;
+  border: 1px solid #b99a6070;
+  background: #ffffff06;
+}
+
+.count-unit strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+.count-unit span {
+  display: block;
+  text-transform: uppercase;
+  font-size: .52rem;
+  letter-spacing: .1em;
+  margin-top: 4px;
+}
+
+.schedule {
+  max-width: 420px;
+  margin: 25px auto 0;
+  text-align: left;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid #b99a6030;
+}
+
+.schedule-row time {
+  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+}
+
+.schedule-row p {
+  margin: 2px 0 0;
+  font-size: .84rem;
+  line-height: 1.7;
+}
+
+.form-wrap {
+  max-width: 480px;
+  margin: 25px auto 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: .75rem;
+  margin: 17px 0 8px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  border: 1px solid #b99a6080;
+  background: #ffffff08;
+  color: var(--ivory);
+  padding: 13px 12px;
+  border-radius: 0;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #d8cbb499;
+}
+
+.choices {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.choices label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+input[type="radio"] { accent-color: var(--gold); }
+
+.submit {
+  width: 100%;
+  margin-top: 23px;
+  padding: 15px;
+  background: var(--ivory);
+  color: var(--blue);
+  border: 1px solid var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .68rem;
+}
+
+.small-note {
+  font-size: .7rem;
+  line-height: 1.7;
+  opacity: .8;
+  margin-top: 15px;
+}
+
+.footer {
+  padding: 42px 20px 48px;
+  text-align: center;
+  background: #040d1c;
+}
+
+.footer .script {
+  font-size: 3.2rem;
+  color: var(--ivory);
+}
+
+.footer p {
+  font-size: .62rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+@media (min-width: 700px) {
+  .section { padding: 82px 50px; }
+  .opening { padding: 60px; }
+  .opening-content { padding: 45px 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+  <!-- OPENING COVER -->
+  <section class="screen satin opening" id="cover">
+    <div class="arc outer"></div>
+    <div class="arc inner"></div>
+
+    <!-- Subtle blue rose and vine decoration -->
+    <svg class="flower-vine left" viewBox="0 0 180 390" aria-hidden="true">
+      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
+        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
+        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
+                 M63 268 Q103 250 103 220 Q69 229 63 268
+                 M77 183 Q39 165 43 137 Q76 151 77 183
+                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
+        <path d="M36 342 Q70 343 80 315 M54 290 Q31 260 43 239
+                 M87 151 Q112 159 120 137"/>
+      </g>
+      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
+        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
+                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
+        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
+                 C133 44 118 56 109 48Z"/>
+        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
+      </g>
+      <g fill="#9cabc0" opacity=".7">
+        <circle cx="75" cy="93" r="2"/>
+        <circle cx="88" cy="87" r="2"/>
+        <circle cx="82" cy="102" r="2"/>
+        <circle cx="38" cy="211" r="2"/>
+        <circle cx="45" cy="220" r="2"/>
+      </g>
+    </svg>
+
+    <svg class="flower-vine right" viewBox="0 0 180 390" aria-hidden="true">
+      <g fill="none" stroke="#8b9bb0" stroke-width="1.5">
+        <path d="M20 385 C65 320 20 275 67 220 S80 120 130 15"/>
+        <path d="M47 318 Q8 295 15 267 Q47 274 47 318
+                 M63 268 Q103 250 103 220 Q69 229 63 268
+                 M77 183 Q39 165 43 137 Q76 151 77 183
+                 M101 108 Q137 95 140 65 Q111 77 101 108"/>
+      </g>
+      <g fill="#10294b" stroke="#8799b0" stroke-width="1.2">
+        <path d="M95 54 C75 38 77 16 97 12 C108 -2 130 8 132 23
+                 C151 28 149 50 132 58 C126 76 102 72 95 54Z"/>
+        <path d="M101 48 C89 38 94 23 105 24 C112 14 128 24 125 35
+                 C133 44 118 56 109 48Z"/>
+        <path d="M103 42 Q110 30 119 39 Q114 48 108 45Z" fill="#07162d"/>
+      </g>
+    </svg>
+
+    <button class="music-control" id="music-toggle" type="button">
+      <span class="music-note">♫</span>
+      <span id="music-label">PLAY MUSIC</span>
+    </button>
+
+    <div class="opening-content">
+      <p class="bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+      <div class="kicker">With the blessings of Allah and our families</div>
+      <div class="gold-rule">✧ ❦ ✧</div>
+
+      <p class="kicker">You are warmly invited to celebrate</p>
+      <h1 class="opening-title">A Wedding Celebration</h1>
+
+      <div class="opening-names">
+        <span class="name-one">Mohammed Jishan</span>
+        <span class="amp">&</span>
+        <span>Irfana Farhath</span>
+      </div>
+
+      <div class="gold-rule">❦</div>
+
+      <div class="date-line">
+        <span class="calendar">🗓️</span>
+        Sunday, 22 November 2026<br>
+        11:00 AM
+      </div>
+
+      <div class="location-line">Makkaraparamba · Kerala</div>
+
+      <p class="verse">
+        “And He placed between you affection and mercy.”
+        <small>Qur’an 30:21 · excerpt</small>
+      </p>
+
+      <button class="primary-btn" id="open-invitation" type="button">
+        Here's Your Invitation <span aria-hidden="true">→</span>
+      </button>
+
+      <div class="gold-rule">✧</div>
+      <p class="kicker" style="margin:0">In shā’ Allāh · إن شاء الله</p>
+    </div>
+  </section>
+
+  <!-- DETAILS ARE HIDDEN UNTIL THE COVER BUTTON IS TAPPED -->
+  <div id="invitation" hidden>
+
+    <section class="section cream" id="welcome">
+      <div class="kicker">Bismillah · In the name of Allah</div>
+      <h2>Dear family &amp; friends</h2>
+      <div class="gold-rule">❦</div>
+
+      <p class="lead">
+        With grateful hearts and the blessings of Allah, we invite you
+        to join us as we begin this beautiful new chapter together.
+        Your presence, prayers and blessings will make our day even
+        more meaningful.
+      </p>
+
+      <div class="date-card">
+        <div class="kicker">Please save the date</div>
+        <div class="date-number">22</div>
+        <div class="date-month">November · 2026</div>
+        <div class="gold-rule">✧ ❦ ✧</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem">
+          Makkaraparamba, Kerala
+        </div>
+        <p style="margin:10px 0 0;font-size:.8rem">🗓️ Sunday · 11:00 AM</p>
+      </div>
+    </section>
+
+    <section class="section navy" id="countdown-section">
+      <div class="kicker">Until our special day</div>
+      <h2>Counting the moments</h2>
+      <p class="lead">We look forward to celebrating with you, In shā’ Allāh.</p>
+
+      <div class="countdown" aria-label="Countdown to wedding">
+        <div class="count-unit"><strong id="days">--</strong><span>Days</span></div>
+        <div class="count-unit"><strong id="hours">--</strong><span>Hours</span></div>
+        <div class="count-unit"><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div class="count-unit"><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <section class="section navy" id="schedule">
+      <div class="kicker">The celebration</div>
+      <h2>Wedding day</h2>
+      <p class="lead">A day of love, prayers and new beginnings.</p>
+
+      <div class="schedule">
+        <div class="schedule-row">
+          <time>11:00 AM</time>
+          <p>
+            <strong>Wedding celebration</strong><br>
+            <span style="opacity:.75">Sunday, 22 November 2026</span>
+          </p>
+        </div>
+        <div class="schedule-row">
+          <time>Venue</time>
+          <p>Makkaraparamba, Kachinikkad, Kerala</p>
+        </div>
+      </div>
+
+      <p class="verse">
+        “Our Lord, grant us from among our spouses and offspring comfort to our eyes.”
+        <small>Qur’an 25:74 · excerpt</small>
+      </p>
+    </section>
+
+    <section class="section navy" id="rsvp">
+      <div class="kicker">Kindly reply</div>
+      <h2>Will you join us?</h2>
+      <p class="lead">Please let us know if you can celebrate with us.</p>
+
+      <form class="form-wrap" id="rsvp-form">
+        <label for="guest-name">Your name</label>
+        <input id="guest-name" name="name" type="text"
+               placeholder="Enter your full name" required>
+
+        <label>Will you be attending?</label>
+        <div class="choices">
+          <label>
+            <input type="radio" name="attendance"
+                   value="Joyfully accepts" required>
+            Joyfully accepts
+          </label>
+          <label>
+            <input type="radio" name="attendance"
+                   value="Regretfully declines">
+            Regretfully declines
+          </label>
+        </div>
+
+        <label for="message">A message for the couple (optional)</label>
+        <textarea id="message" name="message" rows="3"
+                  placeholder="Write your wishes..."></textarea>
+
+        <button class="submit" type="submit">Prepare RSVP</button>
+        <p class="small-note">RSVP contact: +91 7994579109</p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="script">Jishan &amp; Irfana</div>
+      <p>22 November 2026 · Makkaraparamba</p>
+      <div class="gold-rule">✦ ❦ ✦</div>
+      <div class="kicker">
+        May Allah bless our union with love, peace and mercy
+      </div>
+      <button class="button" id="back-to-cover" type="button">
+        Back to cover ↑
+      </button>
+    </footer>
+  </div>
+</main>
+
+<!-- Upload a licensed audio file named music.mp3 to the repository root -->
+<audio id="background-music" loop preload="none">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const cover = document.getElementById('cover');
+const invitation = document.getElementById('invitation');
+const openButton = document.getElementById('open-invitation');
+const backButton = document.getElementById('back-to-cover');
+const audio = document.getElementById('background-music');
+const musicToggle = document.getElementById('music-toggle');
+const musicLabel = document.getElementById('music-label');
+
+openButton.addEventListener('click', () => {
+  invitation.hidden = false;
+  cover.hidden = true;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateCountdown();
+});
+
+backButton.addEventListener('click', () => {
+  invitation.hidden = true;
+  cover.hidden = false;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+musicToggle.addEventListener('click', async () => {
+  if (audio.paused) {
+    try {
+      await audio.play();
+      musicLabel.textContent = 'PAUSE MUSIC';
+      musicToggle.setAttribute('aria-label', 'Pause background music');
+    } catch (error) {
+      alert('Music could not play. Upload a music file named music.mp3 to the same project folder, then try again.');
+    }
+  } else {
+    audio.pause();
+    musicLabel.textContent = 'PLAY MUSIC';
+    musicToggle.setAttribute('aria-label', 'Play background music');
+  }
+});
+
+const weddingDate = new Date(2026, 10, 22, 11, 0, 0).getTime();
+
+function updateCountdown() {
+  const remaining = weddingDate - Date.now();
+
+  const values = remaining <= 0
+    ? [0, 0, 0, 0]
+    : [
+        Math.floor(remaining / 86400000),
+        Math.floor((remaining % 86400000) / 3600000),
+        Math.floor((remaining % 3600000) / 60000),
+        Math.floor((remaining % 60000) / 1000)
+      ];
+
+  ['days', 'hours', 'minutes', 'seconds'].forEach((id, i) => {
+    document.getElementById(id).textContent =
+      String(values[i]).padStart(2, '0');
+  });
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('guest-name').value.trim();
+  const attendance =
+    document.querySelector('input[name="attendance"]:checked')?.value || '';
+  const message = document.getElementById('message').value.trim();
+
+  // WhatsApp number: country code + number, without + or spaces.
+  const whatsappNumber = '917994579109';
+
+  const text = encodeURIComponent(
+    `Wedding RSVP - Mohammed Jishan & Irfana Farhath\n` +
+    `Name: ${name}\nAttendance: ${attendance}\nMessage: ${message}`
+  );
+
+  window.open(
+    `https://wa.me/${whatsappNumber
