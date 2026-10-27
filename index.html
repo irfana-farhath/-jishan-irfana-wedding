@@ -1,963 +1,776 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#061329">
-<title>Jishan & Irfana | A Royal Wedding Invitation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030a16">
+<title>Mohammed Jishan & Irfana Farhath | Wedding Invitation</title>
 
+<!-- Royal Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Reenie+Beanie&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --night: #061329;
-  --navy: #0b2040;
-  --blue: #19385c;
-  --gold: #bd9a58;
-  --light-gold: #e4d1a2;
-  --ivory: #f7efdf;
-  --muted: #c9b991;
+  --midnight-deep: #030a16;
+  --midnight-blue: #08162b;
+  --royal-navy: #0f2545;
+  --sapphire-dark: #16345d;
+  --gold-primary: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-muted: #b89742;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --ivory-cream: #fbf6ee;
+  --ivory-dark: #eddcb7;
+  --text-dark: #121c2b;
+  --text-gold: #e6cb7a;
+  --text-light: #f5eedc;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
 
 body {
-  margin: 0;
-  background: var(--night);
-  color: var(--ivory);
+  background-color: var(--midnight-deep);
+  color: var(--text-light);
   font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+  line-height: 1.5;
 }
 
 button, input, textarea { font: inherit; }
 button { cursor: pointer; }
-
 [hidden] { display: none !important; }
 
+/* Main Wrapper Container */
 .page {
   width: 100%;
   max-width: 900px;
-  margin: auto;
-  overflow: hidden;
-  background: var(--night);
-  box-shadow: 0 0 65px #0009;
-}
-
-.screen {
-  min-height: 100svh;
+  margin: 0 auto;
   position: relative;
-  isolation: isolate;
+  background: var(--midnight-deep);
+  box-shadow: 0 0 80px rgba(0,0,0,0.9);
+}
+
+/* Deep Midnight Blue Satin Fabric Texture */
+.satin-bg {
+  background: 
+    radial-gradient(circle at 50% 30%, #153866 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, #0c2344 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, #102a50 0%, transparent 50%),
+    linear-gradient(135deg, #020711 0%, #081930 25%, #040c18 50%, #0e274a 75%, #020711 100%);
+  position: relative;
+}
+
+.satin-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(2, 6, 14, 0.85) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Page 1: Single Viewport Height - No Scroll Needed */
+.cover-screen {
+  height: 100vh;
+  height: 100svh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 24px 20px;
   overflow: hidden;
 }
 
-.satin {
-  background:
-    radial-gradient(ellipse at 15% 15%, #31547b55, transparent 35%),
-    radial-gradient(ellipse at 85% 85%, #24476b66, transparent 35%),
-    linear-gradient(115deg,
-      #040d1d 0%, #102746 17%, #07162d 36%,
-      #193656 52%, #08172e 70%, #040d1d 100%);
+/* Victorian Royal Golden Frame */
+.victorian-frame {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid var(--gold-primary);
+  pointer-events: none;
+  z-index: 3;
 }
 
-.satin::before,
-.satin::after {
+.victorian-frame::before {
   content: "";
   position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  width: 45%;
-  height: 140%;
-  top: -20%;
-  opacity: .7;
-  filter: blur(2px);
-  border-radius: 50%;
-  background: linear-gradient(90deg,
-    transparent, #91a6c21a 25%, #0005 42%,
-    #a7b8ce20 55%, transparent 80%);
+  inset: 6px;
+  border: 1px solid rgba(243, 229, 171, 0.35);
 }
 
-.satin::before {
-  left: -24%;
-  transform: rotate(18deg);
-}
-
-.satin::after {
-  right: -24%;
-  transform: rotate(-18deg);
-}
-
-/* Victorian frame */
-
-.frame {
-  position: absolute;
-  pointer-events: none;
-  inset: 15px;
-  border: 1px solid #bd9a5880;
-  z-index: 2;
-}
-
-.frame::before {
+.victorian-frame::after {
   content: "";
   position: absolute;
-  inset: 7px;
-  border: 1px solid #e4d1a244;
+  inset: 10px;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
 }
 
-.corner {
+.corner-ornament {
   position: absolute;
-  width: 45px;
-  height: 45px;
-  color: var(--light-gold);
-  font-size: 36px;
+  width: 42px;
+  height: 42px;
+  color: var(--gold-primary);
+  font-size: 32px;
   line-height: 1;
-}
-
-.corner.tl { top: -4px; left: 3px; }
-.corner.tr { top: -4px; right: 3px; transform: scaleX(-1); }
-.corner.bl { bottom: -4px; left: 3px; transform: scaleY(-1); }
-.corner.br { bottom: -4px; right: 3px; transform: scale(-1); }
-
-/* Roses and trailing vines */
-
-.rose {
-  position: absolute;
-  width: clamp(115px, 27vw, 225px);
-  opacity: .62;
-  pointer-events: none;
-  filter: drop-shadow(0 5px 14px #0005);
-  z-index: -1;
-}
-
-.rose.top-left {
-  top: 1%;
-  left: -20px;
-  transform: rotate(-10deg);
-}
-
-.rose.bottom-right {
-  bottom: 0;
-  right: -20px;
-  transform: scaleX(-1) rotate(-10deg);
-}
-
-.rose.detail-left {
-  top: 0;
-  left: -26px;
-  width: clamp(120px, 30vw, 230px);
-}
-
-.rose.detail-right {
-  bottom: 0;
-  right: -26px;
-  transform: scaleX(-1);
-  width: clamp(120px, 30vw, 230px);
-}
-
-.cover {
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 65px 25px;
+  text-shadow: 0 0 10px var(--gold-glow);
 }
 
+.corner-ornament.tl { top: -4px; left: -4px; }
+.corner-ornament.tr { top: -4px; right: -4px; transform: scaleX(-1); }
+.corner-ornament.bl { bottom: -4px; left: -4px; transform: scaleY(-1); }
+.corner-ornament.br { bottom: -4px; right: -4px; transform: scale(-1); }
+
+/* Realistic Blue Roses Background Graphics */
+.rose-svg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+  opacity: 0.85;
+}
+
+.rose-svg.top-left {
+  top: -20px;
+  left: -20px;
+  width: clamp(150px, 35vw, 240px);
+  transform: rotate(5deg);
+}
+
+.rose-svg.bottom-right {
+  bottom: -20px;
+  right: -20px;
+  width: clamp(150px, 35vw, 240px);
+  transform: scaleX(-1) rotate(5deg);
+}
+
+.rose-svg.cream-theme {
+  opacity: 0.45;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.15));
+}
+
+/* Cover Content Styling */
 .cover-content {
-  width: 100%;
-  max-width: 620px;
-  padding: 45px 12px;
   position: relative;
+  z-index: 5;
+  text-align: center;
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 85vh;
+  padding: 10px 0;
+}
+
+/* In Sha Allah in Real Arabic Calligraphy */
+.arabic-bismillah {
+  font-family: 'Amiri', serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  color: var(--gold-light);
+  line-height: 1.2;
+  text-shadow: 0 2px 15px rgba(212, 175, 55, 0.5);
+  margin-top: 5px;
 }
 
 .eyebrow {
   font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
-  letter-spacing: .25em;
-  font-size: .78rem;
-  line-height: 1.8;
-  color: var(--light-gold);
+  letter-spacing: 0.28em;
+  font-size: clamp(0.72rem, 2vw, 0.88rem);
+  color: var(--gold-light);
+  font-weight: 600;
+  margin: 4px 0;
 }
 
-.inshallah {
-  font-family: 'Parisienne', cursive;
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-  color: var(--light-gold);
-  margin: 0 0 12px;
+.royal-flourish {
+  color: var(--gold-primary);
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-shadow: 0 0 8px var(--gold-glow);
 }
 
-.flourish {
-  color: var(--gold);
-  font-size: 1.35rem;
-  letter-spacing: .2em;
-  margin: 17px auto;
-}
-
-.cover-heading {
-  font-family: 'Great Vibes', cursive;
-  font-weight: 400;
-  font-size: clamp(2.8rem, 10vw, 5.2rem);
-  line-height: 1.1;
-  color: var(--ivory);
-  margin: 18px 0;
-  text-shadow: 0 3px 22px #0008;
+.names-block {
+  margin: 4px 0;
 }
 
 .names {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(3rem, 11vw, 5.7rem);
+  font-size: clamp(2.8rem, 8.5vw, 4.8rem);
   font-weight: 400;
-  line-height: 1.18;
-  color: var(--light-gold);
-  margin: 22px 0 14px;
-  text-shadow: 0 3px 18px #0006;
+  line-height: 1.1;
+  color: var(--gold-light);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 12px var(--gold-glow);
 }
 
 .ampersand {
   display: block;
-  font-family: 'Parisienne', cursive;
-  font-size: .65em;
-  color: var(--ivory);
-  line-height: 1.15;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.45em;
+  color: var(--ivory-cream);
+  margin: -6px 0;
+}
+
+.couple-to-be {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(0.68rem, 2vw, 0.82rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.date-location-box {
+  margin: 6px 0;
 }
 
 .cover-date {
-  font-size: clamp(1.25rem, 4vw, 1.65rem);
-  letter-spacing: .06em;
-  line-height: 1.8;
-  color: var(--ivory);
+  font-size: clamp(1.1rem, 3.2vw, 1.45rem);
+  letter-spacing: 0.08em;
+  color: var(--ivory-cream);
+  font-weight: 600;
 }
 
 .cover-location {
-  font-size: 1.1rem;
-  letter-spacing: .15em;
-  color: var(--muted);
+  font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.18em;
+  color: var(--gold-muted);
   font-style: italic;
-  margin-top: 3px;
-}
-
-.date-ornament {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--light-gold);
-  margin: 18px auto;
-}
-
-.date-ornament::before,
-.date-ornament::after {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold));
-}
-
-.date-ornament::after {
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.calendar-outline {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 20px;
-  height: 21px;
-  border: 1px solid var(--light-gold);
-  border-radius: 3px;
-  vertical-align: middle;
-  margin-right: 9px;
-  position: relative;
-  top: -2px;
-}
-
-.calendar-outline::before {
-  content: "";
-  display: block;
-  height: 4px;
-  background: var(--light-gold);
-  border-bottom: 1px solid var(--light-gold);
+  margin-top: 2px;
 }
 
 .invite-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin-top: 27px;
-  padding: 16px 30px;
-  border: 1px solid var(--light-gold);
-  outline: 1px solid #bd9a5840;
-  outline-offset: 5px;
-  border-radius: 2px;
-  background: linear-gradient(120deg, #193656, #08162b);
-  color: var(--ivory);
+  gap: 12px;
+  padding: 13px 32px;
+  border: 1px solid var(--gold-primary);
+  outline: 1px solid rgba(212, 175, 55, 0.4);
+  outline-offset: 4px;
+  background: linear-gradient(135deg, #16345d 0%, #08162b 100%);
+  color: var(--gold-light);
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 1.2rem;
-  letter-spacing: .07em;
-  transition: .25s ease;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  border-radius: 2px;
+  margin-top: 4px;
 }
 
 .invite-btn:hover {
-  background: linear-gradient(120deg, #28496e, #102746);
+  background: linear-gradient(135deg, #1f4577 0%, #0e2444 100%);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px #0005;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 }
 
-/* Invitation details */
+.music-control {
+  position: absolute;
+  z-index: 10;
+  top: 24px;
+  right: 24px;
+  border: 1px solid var(--gold-muted);
+  background: rgba(8, 22, 43, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--gold-light);
+  padding: 6px 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
 
-.section {
-  padding: 85px 28px;
+.music-control:hover {
+  border-color: var(--gold-primary);
+  color: #fff;
+}
+
+/* ===================================================
+   SECTION SEQUENCING (BLUE -> IVORY -> BLUE -> IVORY)
+   =================================================== */
+
+.royal-section {
+  padding: 75px 25px;
   position: relative;
   text-align: center;
   overflow: hidden;
 }
 
-.cream {
-  background: linear-gradient(135deg, #f7efdf, #eee0c4);
-  color: #17253a;
+/* BLUE SECTION (Midnight Royal Navy) */
+.section-blue {
+  background: 
+    radial-gradient(ellipse at 50% 0%, #153866 0%, transparent 65%),
+    linear-gradient(145deg, #030a16 0%, #091b35 50%, #040e1f 100%);
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
 }
 
-.navy {
-  background:
-    radial-gradient(ellipse at 50% 0%, #203e5d55, transparent 55%),
-    linear-gradient(145deg, #07152a, #102746 55%, #061329);
-  color: var(--ivory);
-}
-
-.section h2 {
+.section-blue h2 {
   font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.8rem, 8vw, 4.3rem);
+  color: var(--gold-light);
+  margin: 10px 0 16px;
   font-weight: 400;
-  font-size: clamp(3rem, 9vw, 4.7rem);
-  line-height: 1.12;
-  margin: 14px 0 20px;
-  color: var(--light-gold);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-.cream h2 { color: #173657; }
+.section-blue .eyebrow {
+  color: var(--gold-light);
+}
+
+/* IVORY SECTION (Warm Royal Cream) */
+.section-ivory {
+  background: 
+    radial-gradient(ellipse at 50% 0%, #ffffff 0%, transparent 70%),
+    linear-gradient(135deg, #fdf8f0 0%, #f4e8d0 50%, #eae0c8 100%);
+  color: var(--text-dark);
+  border-bottom: 1px solid rgba(184, 151, 66, 0.35);
+}
+
+.section-ivory h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.8rem, 8vw, 4.3rem);
+  color: #102644;
+  margin: 10px 0 16px;
+  font-weight: 400;
+}
+
+.section-ivory .eyebrow {
+  color: #8c6b28;
+}
+
+.section-ivory .lead {
+  color: #2c384a;
+}
 
 .lead {
-  max-width: 540px;
+  max-width: 580px;
   margin: 0 auto;
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   line-height: 1.8;
+  font-style: italic;
 }
 
-.cream .eyebrow { color: #876a37; }
-
+/* Date Card Inside Ivory Section */
 .date-card {
   max-width: 440px;
-  margin: 38px auto 0;
-  padding: 32px 18px;
-  border: 1px solid #b99a60a6;
-  outline: 1px solid #b99a6040;
+  margin: 35px auto 0;
+  padding: 30px 20px;
+  border: 1px solid var(--gold-muted);
+  outline: 1px solid rgba(184, 151, 66, 0.3);
   outline-offset: 6px;
+  background: rgba(255, 255, 255, 0.6);
   position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .date-number {
   font-family: 'Great Vibes', cursive;
-  font-size: 5.3rem;
-  line-height: 1.1;
-  color: #173657;
-  margin-top: 8px;
+  font-size: 5.2rem;
+  line-height: 1;
+  color: #0d2340;
+  margin: 5px 0;
 }
 
 .date-month {
-  font-size: 1.2rem;
-  letter-spacing: .18em;
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: #7a5c21;
+  font-weight: 600;
 }
 
-.countdown {
+/* Countdown Grid */
+.countdown-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin: 34px auto 0;
+  gap: 14px;
+  margin: 35px auto 0;
+  max-width: 550px;
 }
 
 .count-unit {
-  width: 92px;
-  padding: 15px 8px;
-  border: 1px solid #bd9a5870;
-  background: #ffffff05;
+  min-width: 90px;
+  padding: 16px 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(8, 22, 43, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 2px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
 }
 
 .count-unit strong {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 400;
-  color: var(--light-gold);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  line-height: 1;
 }
 
 .count-unit span {
   display: block;
-  font-size: .78rem;
+  font-size: 0.75rem;
   font-style: italic;
-  letter-spacing: .1em;
+  letter-spacing: 0.12em;
+  color: var(--gold-muted);
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
-.schedule {
-  max-width: 490px;
-  margin: 32px auto 0;
+/* Schedule List */
+.schedule-box {
+  max-width: 520px;
+  margin: 35px auto 0;
   text-align: left;
 }
 
-.schedule-row {
+.schedule-item {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 14px;
-  padding: 19px 0;
-  border-bottom: 1px solid #bd9a5840;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(184, 151, 66, 0.3);
 }
 
-.schedule-row time {
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
   font-family: 'Great Vibes', cursive;
-  font-size: 1.8rem;
-  color: var(--light-gold);
+  font-size: 2rem;
+  color: #102644;
+  line-height: 1;
 }
 
-.schedule-row p {
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.6;
+.schedule-details h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: #0a1c33;
+  font-weight: 700;
 }
 
-.form-wrap {
-  max-width: 480px;
+.schedule-details p {
+  font-size: 1.1rem;
+  color: #3d4a5c;
+  margin-top: 2px;
+}
+
+/* RSVP Form */
+.rsvp-form-container {
+  max-width: 500px;
   margin: 30px auto 0;
   text-align: left;
 }
 
-.form-wrap label {
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
   display: block;
   font-size: 1.1rem;
-  margin: 20px 0 9px;
+  margin-bottom: 8px;
   font-style: italic;
+  color: var(--gold-light);
 }
 
-.form-wrap input[type="text"],
-.form-wrap textarea {
+.form-control {
   width: 100%;
-  border: 1px solid #bd9a5880;
-  background: #ffffff08;
-  color: var(--ivory);
+  border: 1px solid var(--gold-muted);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
   padding: 14px;
-  border-radius: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.form-wrap input::placeholder,
-.form-wrap textarea::placeholder {
-  color: #c9b99199;
+.form-control:focus {
+  border-color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.choices {
+.radio-group {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
 }
 
-.choices label {
+.radio-label {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 8px 0;
+  gap: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-light);
 }
 
-input[type="radio"] { accent-color: var(--gold); }
+input[type="radio"] {
+  accent-color: var(--gold-primary);
+  width: 18px;
+  height: 18px;
+}
 
-.submit {
+.submit-btn {
   width: 100%;
-  margin-top: 24px;
-  padding: 15px;
-  background: linear-gradient(120deg, #e4d1a2, #c3a56b);
-  color: #102746;
-  border: 1px solid var(--light-gold);
+  margin-top: 15px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f3e5ab 0%, #c8a755 100%);
+  color: #08162b;
+  border: 1px solid var(--gold-light);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   font-style: italic;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
-.small-note {
-  font-size: 1rem;
-  font-style: italic;
-  line-height: 1.7;
-  color: var(--muted);
-  margin-top: 18px;
+.submit-btn:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #d4af37 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
 }
 
-.footer {
-  position: relative;
-  padding: 65px 20px;
+.phone-only {
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-top: 25px;
   text-align: center;
-  background:
-    radial-gradient(ellipse at 50% 0%, #20385855, transparent 60%),
-    #040c19;
-  overflow: hidden;
+}
+
+/* Footer Section */
+.footer-royal {
+  padding: 60px 20px 40px;
+  text-align: center;
+  background: #020711;
+  position: relative;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .footer-names {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(3rem, 10vw, 4.7rem);
-  color: var(--light-gold);
-}
-
-.footer p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  letter-spacing: .12em;
-  color: var(--muted);
-  font-style: italic;
+  font-size: clamp(2.8rem, 8vw, 4.2rem);
+  color: var(--gold-light);
+  line-weight: 1;
 }
 
 .back-btn {
-  margin-top: 28px;
-  padding: 13px 25px;
-  border: 1px solid var(--gold);
+  margin-top: 30px;
+  padding: 12px 28px;
+  border: 1px solid var(--gold-muted);
   background: transparent;
-  color: var(--ivory);
+  color: var(--gold-light);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-style: italic;
+  transition: all 0.3s ease;
 }
 
-.music-control {
-  position: absolute;
-  z-index: 5;
-  top: 30px;
-  right: 30px;
-  border: 1px solid #bd9a5880;
-  background: #07162ddd;
-  color: var(--light-gold);
-  padding: 10px 14px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  font-style: italic;
+.back-btn:hover {
+  border-color: var(--gold-primary);
+  color: #fff;
+  background: rgba(212, 175, 55, 0.1);
 }
 
 @media (max-width: 480px) {
-  .frame { inset: 10px; }
-  .cover { padding: 60px 18px; }
-  .cover-content { padding: 38px 8px; }
-  .section { padding: 72px 22px; }
-  .music-control { top: 22px; right: 22px; }
-  .count-unit { width: 75px; }
-  .schedule-row { grid-template-columns: 90px 1fr; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+  .victorian-frame { inset: 10px; }
+  .cover-screen { padding: 15px 12px; }
+  .royal-section { padding: 55px 18px; }
+  .count-unit { min-width: 72px; padding: 12px 6px; }
+  .count-unit strong { font-size: 1.8rem; }
+  .schedule-item { grid-template-columns: 80px 1fr; }
+  .music-control { top: 16px; right: 16px; }
 }
 </style>
 </head>
 
 <body>
+
 <main class="page">
 
-<!-- ROYAL COVER: FIRST PAGE -->
+  <!-- ========================================== -->
+  <!-- PAGE 1: COVER SCREEN (FIT SINGLE VIEWPORT) -->
+  <!-- ========================================== -->
+  <section class="cover-screen satin-bg" id="cover">
 
-<section class="screen satin cover" id="cover">
-
-  <div class="frame" aria-hidden="true">
-    <span class="corner tl">❧</span>
-    <span class="corner tr">❧</span>
-    <span class="corner bl">❧</span>
-    <span class="corner br">❧</span>
-  </div>
-
-  <!-- Decorative blue roses -->
-
-  <svg class="rose top-left" viewBox="0 0 220 320"
-       fill="none" aria-hidden="true">
-    <g stroke="#8da6c2" stroke-width="1.4">
-      <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
-      <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
-            fill="#10294b"/>
-      <path d="M67 213 Q111 193 105 162 Q75 174 67 213Z"
-            fill="#19385c"/>
-      <path d="M97 151 Q60 136 69 108 Q96 120 97 151Z"
-            fill="#10294b"/>
-      <path d="M133 89 Q168 79 171 49 Q142 59 133 89Z"
-            fill="#19385c"/>
-      <path d="M145 55 C120 34 132 10 151 15
-               C171 -5 193 17 185 35
-               C203 54 181 76 161 64
-               C149 76 137 65 145 55Z"
-            fill="#19385c"/>
-      <path d="M151 49 C140 36 151 24 161 30
-               C175 17 185 36 174 43
-               C173 57 158 57 151 49Z"
-            fill="#0b2040"/>
-      <path d="M158 43 Q165 31 174 39 Q169 50 162 47Z"
-            fill="#061329"/>
-      <path d="M25 286 Q58 287 68 260"/>
-    </g>
-  </svg>
-
-  <svg class="rose bottom-right" viewBox="0 0 220 320"
-       fill="none" aria-hidden="true">
-    <g stroke="#8da6c2" stroke-width="1.4">
-      <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
-      <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
-            fill="#10294b"/>
-      <path d="M67 213 Q111 193 105 162 Q75 174 67 213Z"
-            fill="#19385c"/>
-      <path d="M97 151 Q60 136 69 108 Q96 120 97 151Z"
-            fill="#10294b"/>
-      <path d="M145 55 C120 34 132 10 151 15
-               C171 -5 193 17 185 35
-               C203 54 181 76 161 64
-               C149 76 137 65 145 55Z"
-            fill="#19385c"/>
-      <path d="M151 49 C140 36 151 24 161 30
-               C175 17 185 36 174 43
-               C173 57 158 57 151 49Z"
-            fill="#0b2040"/>
-    </g>
-  </svg>
-
-  <div class="cover-content">
-
-    <p class="inshallah">In shā’ Allāh</p>
-
-    <div class="flourish">❧ ❦ ❧</div>
-
-    <div class="eyebrow">Together with our families</div>
-
-    <h1 class="cover-heading">A Royal Wedding</h1>
-
-    <div class="names">
-      Mohammed Jishan
-      <span class="ampersand">&</span>
-      Irfana Farhath
+    <!-- Victorian Border Frame -->
+    <div class="victorian-frame" aria-hidden="true">
+      <span class="corner-ornament tl">❧</span>
+      <span class="corner-ornament tr">❧</span>
+      <span class="corner-ornament bl">❧</span>
+      <span class="corner-ornament br">❧</span>
     </div>
 
-    <div class="flourish">✧ ── ❦ ── ✧</div>
-
-    <div class="cover-date">
-      <span class="calendar-outline" aria-hidden="true"></span>
-      Sunday, 22 November 2026
-      <br>
-      11 o'clock in the morning
-    </div>
-
-    <div class="cover-location">
-      Makkaraparamba · Kerala
-    </div>
-
-    <button class="invite-btn" id="open-invitation" type="button">
-      Here's Your Invitation <span aria-hidden="true">❧</span>
-    </button>
-
-    <div class="flourish">❦</div>
-
-  </div>
-</section>
-
-
-<!-- SECOND PAGE: FULL INVITATION -->
-
-<div id="invitation" hidden>
-
-  <section class="section cream" id="welcome">
-
-    <svg class="rose detail-left" viewBox="0 0 220 320"
-         fill="none" aria-hidden="true">
-      <g stroke="#19385c" stroke-width="1.4">
-        <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
-        <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
-              fill="#19385c"/>
-        <path d="M67 213 Q111 193 105 162 Q75 174 67 213Z"
-              fill="#10294b"/>
-        <path d="M145 55 C120 34 132 10 151 15
-                 C171 -5 193 17 185 35
-                 C203 54 181 76 161 64
-                 C149 76 137 65 145 55Z"
-              fill="#19385c"/>
-        <path d="M151 49 C140 36 151 24 161 30
-                 C175 17 185 36 174 43
-                 C173 57 158 57 151 49Z"
-              fill="#10294b"/>
+    <!-- Realistic Deep Blue SVG Roses Graphics -->
+    <svg class="rose-svg top-left" viewBox="0 0 240 300" fill="none" aria-hidden="true">
+      <defs>
+        <radialGradient id="petalGrad1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#24518a"/>
+          <stop offset="60%" stop-color="#122d52"/>
+          <stop offset="100%" stop-color="#071427"/>
+        </radialGradient>
+        <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1b392b"/>
+          <stop offset="100%" stop-color="#08140e"/>
+        </linearGradient>
+      </defs>
+      <g stroke="#d4af37" stroke-width="0.75">
+        <!-- Leaves -->
+        <path d="M40 220 Q10 190 25 150 Q60 170 40 220Z" fill="url(#leafGrad)"/>
+        <path d="M80 250 Q110 270 140 240 Q120 210 80 250Z" fill="url(#leafGrad)"/>
+        <!-- Main Rose Petals -->
+        <path d="M140 110 C100 80 110 30 150 40 C190 10 220 50 200 80 C230 110 190 150 160 130 C130 150 110 120 140 110Z" fill="url(#petalGrad1)"/>
+        <path d="M150 60 C130 45 150 25 170 35 C190 20 205 40 195 60 C210 75 185 100 165 90 C145 100 135 80 150 60Z" fill="#183b6b"/>
+        <path d="M160 55 C150 45 165 35 175 42 C185 35 195 48 188 60 C195 70 178 80 168 72 C158 78 152 65 160 55Z" fill="#0c2242"/>
+        <path d="M167 52 Q175 42 182 50 Q178 62 170 58Z" fill="#d4af37" opacity="0.6"/>
+        <!-- Secondary Stem & Bud -->
+        <path d="M20 280 C60 210 75 170 135 115" fill="none" stroke="#122d52" stroke-width="3"/>
+        <path d="M65 180 Q40 160 50 130 Q75 145 65 180Z" fill="url(#petalGrad1)"/>
       </g>
     </svg>
 
-    <div class="eyebrow">In the presence of Allah's blessings</div>
-    <h2>To our beloved family & friends</h2>
-    <div class="flourish">❦ ✧ ❦</div>
+    <svg class="rose-svg bottom-right" viewBox="0 0 240 300" fill="none" aria-hidden="true">
+      <g stroke="#d4af37" stroke-width="0.75">
+        <path d="M40 220 Q10 190 25 150 Q60 170 40 220Z" fill="#08140e"/>
+        <path d="M140 110 C100 80 110 30 150 40 C190 10 220 50 200 80 C230 110 190 150 160 130 C130 150 110 120 140 110Z" fill="url(#petalGrad1)"/>
+        <path d="M150 60 C130 45 150 25 170 35 C190 20 205 40 195 60 C210 75 185 100 165 90 C145 100 135 80 150 60Z" fill="#183b6b"/>
+        <path d="M160 55 C150 45 165 35 175 42 C185 35 195 48 188 60 C195 70 178 80 168 72 C158 78 152 65 160 55Z" fill="#0c2242"/>
+      </g>
+    </svg>
 
-    <p class="lead">
-      With grateful hearts and prayers for Allah's blessings,
-      we joyfully invite you to share in the beginning of our
-      new life together. Your presence, prayers and good wishes
-      would make this cherished occasion all the more beautiful.
-    </p>
+    <!-- Ambient Audio Toggle Button -->
+    <button class="music-control" id="music-toggle" type="button" aria-label="Toggle Background Music">
+      <span id="music-label">♫ Play Music</span>
+    </button>
 
-    <div class="date-card">
-      <div class="eyebrow">Kindly reserve the date</div>
-      <div class="date-number">22</div>
-      <div class="date-month">November · 2026</div>
-      <div class="flourish">✧ ❦ ✧</div>
-      <p style="font-size:1.3rem;font-style:italic">
-        Sunday · 11:00 AM
-      </p>
-      <p style="font-size:1.3rem;font-style:italic">
-        Makkaraparamba, Kerala
-      </p>
-    </div>
+    <!-- Viewport Centered Content -->
+    <div class="cover-content">
 
-  </section>
+      <!-- 1. Real Arabic Calligraphy -->
+      <div class="arabic-bismillah">إن شاء الله</div>
 
+      <div class="royal-flourish">❦ ✧ ❦</div>
 
-  <section class="section navy" id="countdown-section">
+      <div class="eyebrow">Together with our families</div>
 
-    <div class="eyebrow">The day our new chapter begins</div>
-    <h2>Counting the moments</h2>
-
-    <p class="lead">
-      With hearts full of hope, we await this blessed day,
-      In shā’ Allāh.
-    </p>
-
-    <div class="countdown" aria-label="Countdown to the wedding">
-      <div class="count-unit">
-        <strong id="days">--</strong><span>Days</span>
+      <!-- 2. Couple Names & New Tagline -->
+      <div class="names-block">
+        <div class="names">
+          Mohammed Jishan
+          <span class="ampersand">&amp;</span>
+          Irfana Farhath
+        </div>
+        <div class="couple-to-be">The Couple to Be</div>
       </div>
-      <div class="count-unit">
-        <strong id="hours">--</strong><span>Hours</span>
-      </div>
-      <div class="count-unit">
-        <strong id="minutes">--</strong><span>Minutes</span>
-      </div>
-      <div class="count-unit">
-        <strong id="seconds">--</strong><span>Seconds</span>
-      </div>
-    </div>
 
-    <div class="flourish">❦</div>
-  </section>
+      <div class="royal-flourish">✧ ── ❦ ── ✧</div>
 
-
-  <section class="section navy" id="schedule">
-
-    <div class="eyebrow">The occasion</div>
-    <h2>The Wedding Day</h2>
-
-    <p class="lead">
-      A gathering of loved ones, heartfelt prayers,
-      and the beginning of a beautiful journey.
-    </p>
-
-    <div class="schedule">
-
-      <div class="schedule-row">
-        <time>11 AM</time>
-        <p>
-          <strong>Wedding Celebration</strong><br>
+      <!-- Date & Location Brief -->
+      <div class="date-location-box">
+        <div class="cover-date">
           Sunday, 22 November 2026
+        </div>
+        <div class="cover-location">
+          Makkaraparamba · Kerala
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button class="invite-btn" id="open-invitation" type="button">
+        Open Invitation <span aria-hidden="true">❧</span>
+      </button>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================= -->
+  <!-- PAGE 2: FULL INVITATION WITH ALTERNATING COLOUR SEQUENCE -->
+  <!-- ======================================================= -->
+  <div id="invitation" hidden>
+
+    <!-- SECTION 1: BLUE (INVITATION WELCOME) -->
+    <section class="royal-section section-blue" id="welcome">
+
+      <svg class="rose-svg top-left" viewBox="0 0 240 300" fill="none" aria-hidden="true">
+        <use href="#petalGrad1"/>
+        <path d="M140 110 C100 80 110 30 150 40 C190 10 220 50 200 80 Z" fill="#183b6b" stroke="#d4af37" stroke-width="0.5"/>
+      </svg>
+
+      <div class="eyebrow">In the presence of Allah's blessings</div>
+      <h2>To Our Beloved Family &amp; Friends</h2>
+      <div class="royal-flourish">❦ ✧ ❦</div>
+
+      <p class="lead">
+        With grateful hearts and prayers for Allah's grace,
+        we joyfully invite you to celebrate the union of our hearts.
+        Your presence and prayers will make our special day truly blessed.
+      </p>
+
+    </section>
+
+
+    <!-- SECTION 2: IVORY (RESERVE THE DATE CARD) -->
+    <section class="royal-section section-ivory" id="date-section">
+
+      <svg class="rose-svg bottom-right cream-theme" viewBox="0 0 240 300" fill="none" aria-hidden="true">
+        <path d="M140 110 C100 80 110 30 150 40 C190 10 220 50 200 80 Z" fill="#16345d" stroke="#b89742" stroke-width="0.5"/>
+      </svg>
+
+      <div class="eyebrow">Save The Blessed Date</div>
+      <h2>The Wedding Celebration</h2>
+      <div class="royal-flourish">✧ ❦ ✧</div>
+
+      <div class="date-card">
+        <div class="eyebrow" style="color:#7a5c21;">Kindly Reserve</div>
+        <div class="date-number">22</div>
+        <div class="date-month">November · 2026</div>
+        <div class="royal-flourish" style="margin: 10px 0;">✧ ❦ ✧</div>
+        <p style="font-size:1.35rem; font-style:italic; font-weight:600; color:#0d2340;">
+          Sunday · 11:00 AM
+        </p>
+        <p style="font-size:1.15rem; font-style:italic; color:#554117; margin-top: 4px;">
+          Makkaraparamba, Kerala
         </p>
       </div>
 
-      <div class="schedule-row">
-        <time>Venue</time>
-        <p>Makkaraparamba, Kachinikkad, Kerala</p>
-      </div>
-
-    </div>
-
-    <div class="flourish">✧ ❦ ✧</div>
-
-    <p class="lead" style="font-style:italic">
-      May Allah fill our lives with affection, mercy,
-      peace and enduring blessings.
-    </p>
-
-  </section>
+    </section>
 
 
-  <section class="section navy" id="rsvp">
+    <!-- SECTION 3: BLUE (DYNAMIC COUNTDOWN TIMER) -->
+    <section class="royal-section section-blue" id="countdown-section">
 
-    <div class="eyebrow">We would be honoured by your presence</div>
-    <h2>Kindly reply</h2>
+      <div class="eyebrow">Counting Down To Our Beginning</div>
+      <h2>Awaiting The Blessed Day</h2>
 
-    <p class="lead">
-      Please let us know if you will be joining us
-      on this special occasion.
-    </p>
-
-    <form class="form-wrap" id="rsvp-form">
-
-      <label for="guest-name">Your name</label>
-      <input id="guest-name" name="name" type="text"
-             placeholder="Kindly enter your name" required>
-
-      <label>Will you be attending?</label>
-
-      <div class="choices">
-        <label>
-          <input type="radio" name="attendance"
-                 value="Joyfully accepts" required>
-          Joyfully accepts
-        </label>
-
-        <label>
-          <input type="radio" name="attendance"
-                 value="Regretfully declines">
-          Regretfully declines
-        </label>
-      </div>
-
-      <label for="message">Your wishes for the couple (optional)</label>
-      <textarea id="message" name="message" rows="3"
-                placeholder="Leave your kind wishes..."></textarea>
-
-      <button class="submit" type="submit">
-        Send your response
-      </button>
-
-      <p class="small-note">
-        For enquiries: +91 7994579109
-      </p>
-
-    </form>
-
-  </section>
-
-
-  <footer class="footer">
-
-    <svg class="rose detail-left" viewBox="0 0 220 320"
-         fill="none" aria-hidden="true">
-      <g stroke="#8da6c2" stroke-width="1.4">
-        <path d="M15 315 C60 245 35 205 88 150 S130 80 164 15"/>
-        <path d="M43 265 Q5 248 15 216 Q43 227 43 265Z"
-              fill="#19385c"/>
-        <path d="M145 55 C120 34 132 10 151 15
-                 C171 -5 193 17 185 35
-                 C203 54 181 76 161 64
-                 C149 76 137 65 145 55Z"
-              fill="#19385c"/>
-      </g>
-    </svg>
-
-    <div class="footer-names">Jishan & Irfana</div>
-
-    <p>22 November 2026 · Makkaraparamba</p>
-
-    <div class="flourish">✧ ── ❦ ── ✧</div>
-
-    <p style="font-style:italic;letter-spacing:normal">
-      In shā’ Allāh, may our union be blessed with
-      love, peace and mercy.
-    </p>
-
-    <button class="back-btn" id="back-to-cover" type="button">
-      Return to the invitation cover ↑
-    </button>
-
-  </footer>
-
-</div>
-</main>
-
-<audio id="background-music" loop preload="none">
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const cover = document.getElementById('cover');
-const invitation = document.getElementById('invitation');
-const openButton = document.getElementById('open-invitation');
-const backButton = document.getElementById('back-to-cover');
-
-const audio = document.getElementById('background-music');
-const musicToggle = document.getElementById('music-toggle');
-const musicLabel = document.getElementById('music-label');
-
-openButton.addEventListener('click', function () {
-  cover.hidden = true;
-  invitation.hidden = false;
-  window.scrollTo({ top: 0, behavior: 'auto' });
-  updateCountdown();
-});
-
-backButton.addEventListener('click', function () {
-  invitation.hidden = true;
-  cover.hidden = false;
-  window.scrollTo({ top: 0, behavior: 'auto' });
-});
-
-musicToggle.addEventListener('click', async function () {
-  if (audio.paused) {
-    try {
-      await audio.play();
-      musicLabel.textContent = '♫ Pause Music';
-    } catch (error) {
-      alert('Please upload a music file named music.mp3 to your project folder first.');
-    }
-  } else {
-    audio.pause();
-    musicLabel.textContent = '♫ Music';
-  }
-});
-
-const weddingDate = new Date(2026, 10, 22, 11, 0, 0).getTime();
-
-function updateCountdown() {
-  const remaining = weddingDate - Date.now();
-
-  const values = remaining <= 0
-    ? [0, 0, 0, 0]
-    : [
-        Math.floor(remaining / 86400000),
-        Math.floor((remaining % 86400000) / 3600000),
-        Math.floor((remaining % 3600000) / 60000),
-        Math.floor((remaining % 60000) / 1000)
-      ];
-
-  ['days', 'hours', 'minutes', 'seconds'].forEach((id, index) => {
-    document.getElementById(id).textContent =
-      String(values[index]).padStart(2, '0');
-  });
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-document.getElementById('rsvp-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('guest-name').value.trim();
-
-  const attendance =
-    document.querySelector('input[name="attendance"]:checked')?.value || '';
-
-  const message = document.getElementById('message').value.trim();
-
-  const whatsappNumber = '917994579109';
-
-  const text = encodeURIComponent(
-    `Wedding RSVP - Mohammed Jishan & Irfana Farhath\n` +
-    `Name: ${name}\n` +
-    `Attendance: ${attendance}\n` +
-    `Message: ${message}`
-  );
-
-  window.open(
-    `https://wa.me/${whatsappNumber}?text=${text}`,
-    '_blank',
-    'noopener,noreferrer'
-  );
-});
-</script>
-
-</body>
-</html>
+      <p class="lead">
+        In shā’ Allāh, every moment brings us closer to a lifetime of lo
